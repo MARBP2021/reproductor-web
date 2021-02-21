@@ -1,0 +1,132 @@
+@media (min-width:1400px) { 
+
+    :root {
+            
+        /*banner superior */
+        --bannerHeight: 100px;
+        --bannerFontSize: 24px;
+        --bannerTitleMarginLeft: 10px;
+    
+        /*formulario */
+        --ingresoContainerHeight: 640px;
+        --ingreso__formularioHEIGHT: 350px;
+        --ingreso__formularioWIDTH: 600px;
+        /*ingreso__text */
+        --inputTextSize: 20px;
+        
+        /*inputs user y password */
+    
+        --inputHeight: 30px;
+        --inputWidth: 600px;
+    
+        /*botones */
+    
+        --buttonFontSize: 20px;
+        --buttonHeight: 50px;
+        --buttonWidth: 600px;
+    
+    }
+
+
+    
+    .banner {
+    
+        border-radius: 4px;
+        background-color: green;
+        height: var(--bannerHeight);
+        width: 100%;
+        display:flex;
+        align-items: center;
+        color:white;
+        font-style: italic;
+        font-size: var(--bannerFontSize);
+    }
+    
+    .banner-title {
+    
+        margin-left:var(--bannerTitleMarginLeft);
+    
+    }
+    
+    .ingreso {
+    
+        height: var(--ingresoContainerHeight);
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    
+    }
+    
+    .ingreso__formulario {
+    
+      border-top: solid 1px;
+      height: var(--ingreso__formularioHEIGHT);
+      width: var(--ingreso__formularioWIDTH);
+      border-bottom: solid 0.5px;
+      
+     
+    }
+    .ingreso__contenedor{
+    
+        height:300px;
+        margin-top:100px;
+    
+        
+    }
+    
+    .ingreso__text {
+    
+        
+        font-size: var(--inputTextSize)
+    
+    
+    }
+    
+    .ingreso__usuario--input{
+    
+        width: var(--inputWidth);
+        height: var(--inputHeight);
+        border-radius: 5px;
+        border: solid 0.5px  rgba(128, 128, 128, 0.582);
+        
+    }
+    
+    .ingreso__password--input{
+    
+        width:var(--inputWidth);
+        height:var(--inputHeight);
+        border: solid 0.5px  rgba(128, 128, 128, 0.582);
+        border-radius: 5px;
+        
+        
+    }
+    
+    .ingreso__button{
+        
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+        margin-top:30px;
+        font-size: var(--buttonFontSize);
+        border-radius:5px;
+        color:white;
+        background-color: #003780;
+        border-style: none;
+         
+    }
+    
+    .ingreso__button--nuevoUsuario{
+    
+        margin-top:30px;
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+        font-size: var(--buttonFontSize);
+        border-radius:5px;
+        border-style: none;
+        color: white;
+        background-color: #5EB500;
+       
+    }
+    
+    
+    }
