@@ -1,17 +1,20 @@
-import React from 'react';
-import './css-components/form.css';
+import React, {useState} from 'react';
+import './css-components/Login.css';
 
 
 const Form = () => {
+    
+    const [register, setRegister] = useState(true);
+    
+    const aRegistro = () => setRegister(false);
+
+
     return ( 
         <>
-        <header className = "banner">
+        
 
-        <h1 className = "banner-title">musicfi</h1>
-
-
-        </header>
-        <main className = "ingreso" >
+      
+        <main className = "ingreso">
             <form className = "ingreso__formulario">
            
             <div className = "ingreso__contenedor">
@@ -28,11 +31,33 @@ const Form = () => {
             
             <p className = "ingreso__text">Password:</p>
             
-            <input type ="password" className = "ingreso__password--input" />
+            <input 
+            
+            type ="password" 
+            className = "ingreso__password--input" 
+            
+            />
 
-            <button type = "submit" className = "ingreso__button">Ingresar</button>
-            <button type = "submit" className = "ingreso__button--nuevoUsuario">Crear cuenta nueva</button>
+            <button 
+            type = "submit" 
+            className = "ingreso__button"
+            
+            >Ingresar</button>
+              <button
+
+            type = "submit" 
+            className = "ingreso__button--nuevoUsuario"
+
+
+
+            >Crear cuenta nueva</button>
+            
+            
+           
+
             </div>
+           
+        
 
             </form>
         

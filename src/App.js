@@ -1,14 +1,24 @@
 import React from 'react';
+import Banner from './components/Banner';
 import Form from './components/Form';
 
 
 function App() {
-  return (
   
-      <Form />
+ 
+  
+  
+  return (
+      <>
 
+      <Banner />
+      
+      <Form />
+      <CrearNuevaCuenta />
     
 
+    
+      </>    
 
   );
 }

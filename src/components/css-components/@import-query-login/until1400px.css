@@ -1,10 +1,8 @@
-@media (max-width:768px) {
+@media (max-width:1400px) { 
     :root {
+            
+      
         
-        /*banner superior */
-        --bannerHeight: 50px;
-        --bannerFontSize: 12px;
-        --bannerTitleMarginLeft: 5px;
     
         /*formulario */
         --ingresoContainerHeight: 640px;
@@ -23,25 +21,8 @@
         --buttonWidth: 300px;
     
     }
-  
-    .banner {
     
-        border-radius: 4px;
-        background-color: green;
-        height: var(--bannerHeight);
-        width: 100%;
-        display:flex;
-        align-items: center;
-        color:white;
-        font-style: italic;
-        font-size: var(--bannerFontSize);
-    }
-    
-    .banner-title {
-    
-        margin-left:var(--bannerTitleMarginLeft);
-    
-    }
+
     
     .ingreso {
     
@@ -121,8 +102,6 @@
         background-color: #5EB500;
        
     }
-
-
-
-
-}
+    
+    
+    }
