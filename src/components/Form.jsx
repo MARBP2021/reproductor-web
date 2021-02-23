@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import './css-components/Login.css';
+import Register from './Register';
+import './css-components/Form.css';
 
 
 const Form = () => {
@@ -11,58 +12,66 @@ const Form = () => {
 
     return ( 
         <>
+        {register ?   
         
-
-      
         <main className = "ingreso">
             <form className = "ingreso__formulario">
            
-            <div className = "ingreso__contenedor">
-            
-            <p className = "ingreso__text">Usuario:</p>
-            
-            <input 
-            type = "text" 
-            className = "ingreso__usuario--input" 
-          
-            
-            
-            />
-            
-            <p className = "ingreso__text">Password:</p>
-            
-            <input 
-            
-            type ="password" 
-            className = "ingreso__password--input" 
-            
-            />
+                <div className = "ingreso__contenedor">
 
-            <button 
-            type = "submit" 
-            className = "ingreso__button"
-            
-            >Ingresar</button>
-              <button
+                    <p className = "ingreso__text">Usuario:</p>
 
-            type = "submit" 
-            className = "ingreso__button--nuevoUsuario"
+                        <input 
+                        type = "text" 
+                        className = "ingreso__usuario" 
+                    />
+
+                    <p className = "ingreso__text">Password:</p>
+
+                    <input 
+
+                        type ="password" 
+                        className = "ingreso__usuario" 
+
+                    />
+
+                    <button 
+                        type = "submit" 
+                        className = "ingreso__button"
+
+                    >Ingresar</button>
 
 
 
-            >Crear cuenta nueva</button>
-            
-            
-           
+                    <button
 
+
+                        type = "submit" 
+                        className = "ingreso__button--nuevoUsuario"
+                        onClick = {aRegistro}
+
+
+                    >Crear cuenta nueva</button>  
+            
             </div>
-           
+
         
 
             </form>
         
         </main>
-
+        
+        
+        
+        :     <Register /> }
+        
+        
+        
+        
+        
+        
+        
+        
         </>
 
 
