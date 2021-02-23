@@ -9,8 +9,8 @@
 
     }
     .registro__contenedor {
-        margin-top:-100px;
-        border-top: solid 0.5px;
+        margin-top:-50px;
+        border-top: solid 0.5px rgb(206, 206, 206);
         width: 300px;
         height: 300px;
     }
@@ -37,7 +37,11 @@
         background-color: #5EB500;
         font-weight: bold;
     }
+    .registro__text{
+        font-size: 20px;
 
+
+    }
 @media (min-width: 992px) {
 
     :root {
@@ -55,7 +59,7 @@
 
 
     .registro__contenedor {
-     
+        margin-top:-150px;
         width: var(--anchoForm);
         height: 300px;
     }
@@ -92,7 +96,7 @@
 
     }
     .registro__contenedor {
-        border-top: solid 0.5px;
+        margin-top:-150px;
         width: 600px;
     
     }

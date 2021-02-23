@@ -4,9 +4,9 @@ import './css-components/Register.css';
 
 
 const Register = () => {
+    
     return ( 
         <>
-      
       <main className = "registro">
             <form className = "registro__formulario">
            
@@ -45,28 +45,22 @@ const Register = () => {
                         className = "registro__button"
 
                     >Registrarse</button>
+                    
 
 
-
-        
-            </div>
+                    </div>
 
         
 
             </form>
         
         </main>
-        
-        
-        
-        
-        
-        
-        
+                
         </>
 
 
-     );
+    );
+
 }
  
 export default Register;

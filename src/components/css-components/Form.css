@@ -1,6 +1,186 @@
-@import './@import-query-/until576px.css';
-@import './@import-query-/until768px.css';
-@import './@import-query-/until992px.css';
-@import './@import-query-/until1400px.css';
-@import './@import-query-/since1400px.css';
 
+    :root {
+        
+     
+        --ingreso__formularioHEIGHT: 350px;
+        --ingreso__formularioWIDTH: 300px;
+        --inputTextSize: 20px;
+        --inputHeight: 30px;
+        --buttonFontSize: 15px;
+        --buttonHeight: 50px;
+        --buttonWidth: 300px;
+    
+    
+    
+    }
+
+    .ingreso {
+    
+        height: 640px;
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    
+    }
+
+    .ingreso__formulario {
+      border-top: solid 1px rgb(206, 206, 206);
+      height: var(--ingreso__formularioHEIGHT);
+      width: var(--ingreso__formularioWIDTH);    
+       
+    }
+
+    .ingreso__contenedor{
+    
+        height:300px;
+        margin-top:20px;
+    
+        
+    }
+    
+    .ingreso__text {
+    
+        
+        font-size: var(--inputTextSize)
+    
+    
+    }
+    
+    .ingreso__usuario{
+    
+        width: 300px;
+        height: var(--inputHeight);
+        border-radius: 5px;
+        border: solid 0.5px  rgba(128, 128, 128, 0.582);
+        
+    }
+
+    .ingreso__button{
+        
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+        margin-top:30px;
+        font-size: var(--buttonFontSize);
+        border-radius:5px;
+        color:white;
+        background-color: #003780;
+        border-style: none;
+        font-weight: bold;
+
+         
+    }
+    
+    .ingreso__button--nuevoUsuario{
+    
+        margin-top:30px;
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+        font-size: var(--buttonFontSize);
+        border-radius:5px;
+        border-style: none;
+        color: white;
+        background-color: #5EB500;
+        font-weight: bold;
+       
+    }
+@media(min-width: 992px) {
+
+    :root {
+        
+     
+        --ingreso__formularioHEIGHT: 450px;
+        --ingreso__formularioWIDTH: 400px;
+        --inputTextSize: 25px;
+        --inputHeight: 30px;
+        --buttonFontSize: 15px;
+        --buttonHeight: 50px;
+        --buttonWidth: 400px;
+    
+    }
+
+    .ingreso__formulario {
+    
+        height: var(--ingreso__formularioHEIGHT);
+        width: var(--ingreso__formularioWIDTH);
+       
+      }
+
+      .ingreso__usuario{
+    
+        width: 400px;
+        height: var(--inputHeight);
+
+    }
+
+    .ingreso__button{
+        margin-top:30px;
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+       
+  
+         
+    }
+    
+    .ingreso__button--nuevoUsuario{
+    
+
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+  
+       
+    }
+
+
+}
+
+@media (min-width: 1400px) {
+
+    :root {
+        
+     
+        --ingreso__formularioHEIGHT: 450px;
+        --ingreso__formularioWIDTH:600px;
+        --inputTextSize: 30px;
+        --inputHeight: 40px;
+        --buttonFontSize: 15px;
+        --buttonHeight: 60px;
+        --buttonWidth: 600px;
+    
+    }
+
+    .ingreso__formulario {
+    
+        height: var(--ingreso__formularioHEIGHT);
+        width: var(--ingreso__formularioWIDTH);
+       
+      }
+
+      .ingreso__usuario{
+        margin-top: 10px;
+        width: 600px;
+        height: var(--inputHeight);
+
+    }
+    .ingreso__text {
+    
+        font-size: var(--inputTextSize)
+    
+    }
+    .ingreso__button{
+        margin-top:70px;
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+       
+    }
+    
+    .ingreso__button--nuevoUsuario{
+    
+
+        height: var(--buttonHeight);
+        width:var(--buttonWidth);
+  
+       
+    }
+
+}
