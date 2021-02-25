@@ -19,7 +19,7 @@ const Form = () => {
            
                 <div className = "ingreso__contenedor">
 
-                    <p className = "ingreso__text">Usuario:</p>
+                    <p className = "ingreso__text">Usuario o email:</p>
 
                         <input 
                         type = "text" 
@@ -63,7 +63,7 @@ const Form = () => {
         
         
         
-        :     <Register /> }
+        :<Register/> }
         
         
         

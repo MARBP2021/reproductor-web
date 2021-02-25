@@ -53,7 +53,7 @@
         height: var(--inputHeight);
         border-radius: 5px;
         border: solid 0.5px  rgba(128, 128, 128, 0.582);
-        
+        font-size: 25px;
     }
 
     .ingreso__button{
