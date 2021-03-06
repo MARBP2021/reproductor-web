@@ -1,0 +1,138 @@
+:root {
+    --CabeceroFooterColor: #222031; 
+
+}
+body {
+
+    background-color: #191927;
+    color: #efefef;
+    font-weight: bold;
+}
+/*header*/
+.cabecero {
+
+    background-color: var(--CabeceroFooterColor);
+    height: 70px;
+    width: 100%;
+    display:flex;
+    border-radius: 5px;
+}
+.cabecero__logo{
+    margin-left:5%;
+    display:inherit;
+    align-items: center;
+}
+.cabecero__logo--imagen {
+    width: 25px;
+    height:25px;
+}
+.cabecero__navegacion{
+
+    display:inherit;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 35%;
+
+}
+.cabecero__nav{ 
+    
+    display:inherit;
+    align-items:center;
+    width: 100%;
+    height: 100%;    
+
+}
+.cabecero__lupa {
+    background-color: #67676e;
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.cabecero__lupa--image {
+
+    width: 16px;
+    height:16px;
+    margin-top:30%;
+    margin-left:30%;
+}
+.span {
+    
+    float: left;
+    margin-top:7%;
+    margin-left: 7%;
+
+}
+.cabecero__select {
+    margin-left: 10%;
+    border-radius: 20px;
+    width: 120px;
+    background-color:#67676e;
+    height: 35px;
+}
+.cabecero__select--button {
+    float: right;
+    margin-right: 15px;
+    background-color:#67676e;
+    color: white;
+    border-style: none;
+    height: 100%;       
+}
+/* main */
+
+.principal {
+
+    width: 100%;
+    height: 100%;
+
+}
+.principal__escuchados--title{
+    margin-left: 5%;
+    font-size: 24px;
+}
+.principal__images {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 140px;
+    gap: 20px;
+    grid-template-areas:
+      ". .";
+    margin-left: 5%;
+}
+.principal__images--generic{
+
+    border-radius: 10px;
+    width: 200px;
+    height: 150px;
+}
+.audio {
+    background-color: var(--CabeceroFooterColor);
+    position:fixed;
+    border-radius: 5px;
+    height: 76px;
+    margin-top:11px;
+}
+.audio__container {
+    height: 100%;
+    display:flex;
+    align-items:center;
+}
+.audio__album{
+
+    height:45px;
+    width: 45px;
+    border-radius: 10px;
+    margin-left: 5%;
+}
+.audio__description{
+    margin-left: 2%;
+}
+.audio__description--song {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+.audio__description--author {
+    margin-top: 4%;
+    font-size: 12px;
+
+}
