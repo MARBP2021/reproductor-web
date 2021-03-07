@@ -4,6 +4,8 @@ import Logo from '../images/logo.png'
 import Lupa from '../images/search-regular-144.png';
 import Imagen from '../images/foto-generica.png'
 import SkipPrevious from '../images/Icon material-skip-previous.png'
+import Play from '../images/play-regular-24.png'
+import Pause from '../images/pause-regular-24.png'
 import SkipNext from '../images/Icon material-skip-next.png'
 
 
@@ -53,6 +55,11 @@ const Reproductor = () => {
                             
                             <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
                             <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
+
 
                         </div>
 
@@ -71,6 +78,10 @@ const Reproductor = () => {
 
                             <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
                             <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
 
                         </div>
 
@@ -89,6 +100,10 @@ const Reproductor = () => {
                      
                             <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />     
                             <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen1" className = "principal__images--generic" />
+                            <img src = {Imagen} alt = "imagen2" className = "principal__images--generic" />
 
                         </div>
 
@@ -103,34 +118,32 @@ const Reproductor = () => {
             <section className="audio">
                 
                 <div className="audio__container">
-                <img src = {Imagen} alt ="audio__container--image" className = "audio__album"/>
+                <img src = {Imagen} alt ="audio__container" className = "audio__album"/>
                 
                     <div className="audio__description">
 
                         <h4 className = "audio__description--song">Audio Song</h4>
                         <h5 className = "audio__description--author"> Audio Author</h5>    
 
-
                     </div>  
-            
+                    <div className="audio__reproductor">
+                        <img src = {SkipPrevious} alt ="icono-atras" className = "audio__reproductor--button"/>
+                        <div className="audio__reproductor--play">
+                            <img src = {Pause} alt = "play-icon" className= "audio__reproductor--play--icon" />
+
+                        </div>    
+                        <img src = {SkipNext} alt ="icono-adelante"  className = "audio__reproductor--button"/>
+                       
+                    </div>
+               
                 </div>
 
            
                 
-                    {/* 
-                        <div className = "audio__reproductor">
-                            
-                            
-                            <img src = {SkipPrevious} alt ="icono-atras"/>
-                            <img src = {SkipNext} alt ="icono-adelante"/>
-
-        
-        
-        
-                        </div>
+                
                             
 
-            */}                
+                          
             </section>
             
             

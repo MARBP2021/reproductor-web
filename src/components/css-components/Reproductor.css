@@ -107,7 +107,6 @@ body {
 }
 .audio {
     background-color: var(--CabeceroFooterColor);
-    position:fixed;
     border-radius: 5px;
     height: 76px;
     margin-top:11px;
@@ -136,3 +135,36 @@ body {
     font-size: 12px;
 
 }
+
+.audio__reproductor {
+
+  display: grid;
+  grid-template-columns: 45px 75px 70px;
+  grid-template-rows: 75px;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . .";
+  align-items: center;
+  margin-left:60px;  
+}
+
+
+
+.audio__reproductor--button{
+    width: 16px;
+    height: 16px;
+}
+
+.audio__reproductor--play{
+
+    background-color: #06BDF3;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+
+
+}
+
