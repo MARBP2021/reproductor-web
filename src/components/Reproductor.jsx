@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './css-components/Reproductor.css';
 import Logo from '../images/logo.png'
 import Lupa from '../images/search-regular-144.png';
@@ -13,6 +13,21 @@ import SkipNext from '../images/Icon material-skip-next.png'
 
 
 const Reproductor = () => {
+
+    const [agrandar, setAgrandar] = useState("cabecero__lupa")
+    const [texto, setTexto] = useState("")
+    const AgrandarInput = () => {
+    
+        setAgrandar("cabecero__lupa--onClick");
+        setTexto("Buscar por album, cancion o artista...")
+        
+    
+    
+    }
+
+
+
+
     return ( 
         <>
 <header className="cabecero">
@@ -25,9 +40,22 @@ const Reproductor = () => {
             <nav className ="cabecero__navegacion">
                               
                     <div className ="cabecero__nav">
-                        <div className="cabecero__lupa">
-                        <img src = {Lupa} alt = "lupa-buscador" className = "cabecero__lupa--image"/>
-                        </div>    
+
+                        <input 
+                            type="text" 
+                            className={agrandar}
+                            onClick = {AgrandarInput}
+                            placeholder = {texto}
+                            /> 
+                            {/* 
+                            <img 
+                                src = {Lupa} 
+                                className= "cabecero__lupa--image" 
+                                onClick = {AgrandarInput}    
+                            
+                            />   
+                            */}
+
                             <div className="cabecero__select">
                                 <span className = "span">User</span>
 

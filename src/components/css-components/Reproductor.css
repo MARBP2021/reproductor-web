@@ -1,5 +1,7 @@
 :root {
     --CabeceroFooterColor: #222031; 
+    --letras: #efefef;
+    
 
 }
 body {
@@ -32,7 +34,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-left: 35%;
+    margin-left: 20%;
 
 }
 .cabecero__nav{ 
@@ -41,21 +43,40 @@ body {
     align-items:center;
     width: 100%;
     height: 100%;    
-
 }
 .cabecero__lupa {
+
     background-color: #67676e;
     height:40px;
     width: 40px;
     border-radius: 50%;
+    border-style: none;
 }
+.cabecero__lupa--onClick {
+    
+    background-color: #67676e;
+    height:11px;
+    width: 170px;
+    padding: 12px 40px;
+    border-radius: 15px;
+    border-style: none;
+    transition: 0.7s;   
+    color: var(--letras);
+    font-size: 15px;
+    
+}
+
+.cabecero__lupa--onClick::placeholder {
+    color:var(--letras);;
+    
+}
+
+
 .cabecero__lupa--image {
 
-    width: 16px;
-    height:16px;
-    margin-top:30%;
-    margin-left:30%;
+
 }
+
 .span {
     
     float: left;
@@ -63,20 +84,24 @@ body {
     margin-left: 7%;
 
 }
+
 .cabecero__select {
-    margin-left: 10%;
+    margin-left: 5%;
     border-radius: 20px;
     width: 120px;
     background-color:#67676e;
     height: 35px;
 }
+
 .cabecero__select--button {
+
     float: right;
     margin-right: 15px;
     background-color:#67676e;
     color: white;
     border-style: none;
     height: 100%;       
+
 }
 /* main */
 
@@ -90,9 +115,10 @@ body {
     margin-left: 5%;
     font-size: 24px;
 }
+
 .principal__images {
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px;
     grid-template-rows: 140px;
     gap: 20px;
     grid-template-areas:
@@ -133,7 +159,6 @@ body {
 .audio__description--author {
     margin-top: 4%;
     font-size: 12px;
-
 }
 
 .audio__reproductor {
