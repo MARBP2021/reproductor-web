@@ -30,7 +30,12 @@ const Reproductor = () => {
 
     return ( 
         <>
+
+        
 <header className="cabecero">
+
+    <div className="container">
+            
             <div className="cabecero__logo">
             
                 <img src = {Logo} alt= "logo" className="cabecero__logo--imagen" />
@@ -68,8 +73,8 @@ const Reproductor = () => {
                     
                     </div>
             </nav>
-                
-    </header>    
+    </div>                        
+</header>    
 
             
 
