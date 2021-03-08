@@ -1,26 +1,15 @@
 import React from 'react';
-import Banner from './components/Banner';
-import Form from './components/Form';
+// import Banner from './components/Banner';
+// import Form from './components/Form';
 import Reproductor from './components/Reproductor';
 
-
 function App() {
-  
-  /*
-  <Banner />
-      
-  <Form />
-  
-  */
-  
+  // <Banner />
+  // <Form />
   return (
-      <>
+    <>
       <Reproductor />
-      
-      
-    
-      </>    
-
+    </>
   );
 }
 

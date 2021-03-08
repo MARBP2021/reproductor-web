@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './css-components/Register.css';
+import '../styles/Register.css';
 
 
 

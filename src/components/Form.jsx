@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Register from './Register';
-import './css-components/Form.css';
+import '../styles/Form.css';
 
 
 const Form = () => {
@@ -19,12 +19,12 @@ const Form = () => {
     });
 
     const capturarIngreso = (e) => {
-        setIngreso ({
+        setIngreso({
             ...ingreso,
             [e.target.name]: [e.target.value]
-        
+
         })
-        
+
     }
 
     const { email, password } = ingreso;
@@ -47,7 +47,7 @@ const Form = () => {
 
 
 
-    const traerDatos = async (email,password) => {
+    const traerDatos = async (email, password) => {
 
         const key = '2e13ca84ec3be8b443b97f8c41fa734afda647f8de0276537ef58ad1b9ab7a66';
         const url = `https://api-users.000webhostapp.com/api-usuarios/get.php?key=${key}`;
@@ -72,7 +72,7 @@ const Form = () => {
 
 
 
-   
+
 
 
 
@@ -82,14 +82,14 @@ const Form = () => {
             {register ?
 
                 <main className="ingreso">
-                    <form 
-                        
+                    <form
+
                         className="ingreso__formulario"
-                        onSubmit ={verificarIngreso}
-                        
-                        
-                        
-                        >
+                        onSubmit={verificarIngreso}
+
+
+
+                    >
 
                         <div className="ingreso__contenedor">
 
@@ -99,8 +99,8 @@ const Form = () => {
                                 type="text"
                                 className="ingreso__usuario"
                                 name="email"
-                                onChange = {capturarIngreso}
-                            
+                                onChange={capturarIngreso}
+
                             />
 
                             <p className="ingreso__text">Password:</p>
@@ -110,7 +110,7 @@ const Form = () => {
                                 type="password"
                                 className="ingreso__usuario"
                                 name="password"
-                                onChange = {capturarIngreso}
+                                onChange={capturarIngreso}
 
 
                             />
