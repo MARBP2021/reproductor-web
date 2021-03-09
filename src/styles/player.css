@@ -8,15 +8,21 @@
 }
 
 .footer > .limiter {
+  align-items: center;
   display: grid;
-  grid-gap: 10px 20px;
-  grid-template: 6px 50px / repeat(2, 1fr);
-  padding-bottom: 10px;
+  grid-column-gap: 20px;
+  grid-template: 50px / 1fr 130px;
+  padding: 16px 15px 10px;
 }
 
 .progress {
-  display: flex;
+  display: grid;
   grid-column: 1 / 3;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .progress span {
@@ -25,6 +31,7 @@
 
 .progress input {
   width: 100%;
+  height: 6px;
 }
 
 input[type='range']:focus {
@@ -92,7 +99,6 @@ input[type=range]::-ms-fill-upper {
   display: grid;
   grid-gap: 5px 10px;
   grid-template: repeat(2, 22.5px) / 50px 1fr;
-  padding-left: 15px;
 }
 
 .song__banner {
@@ -115,4 +121,76 @@ input[type=range]::-ms-fill-upper {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.controls {
+  align-items: center;
+  display: grid;
+  grid-gap: 22.5px;
+  grid-template: 45px / 20px 45px 20px;
+}
+
+.controls > svg {
+  font-size: 20px;
+}
+
+.controls__state {
+  align-items: center;
+  background-color: #06BDF3;
+  border-radius: 50%;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+}
+
+.controls__state svg {
+  font-size: 22px;
+}
+
+.controls__state > div {
+  height: 22px;
+}
+
+.play {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .footer > .limiter {
+    grid-gap: 30px;
+    grid-template: 50px / 160px 1fr 130px;
+    padding: 16px 20px 10px;
+  }
+
+  .progress {
+    align-items: center;
+    border-radius: 3px;
+    grid-column: initial;
+    grid-column-gap: 10px;
+    grid-template: 6px / 36px 1fr 36px;
+    position: initial;
+  }
+
+  .progress > span {
+    color: #efefef;
+    display: initial;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  input[type=range] {
+    border-radius: 3px;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    border-radius: 3px;
+  }
+
+  input[type=range]::-moz-range-track {
+    border-radius: 3px;
+  }
+
+  input[type=range]::-ms-track {
+    border-radius: 3px;
+  }
 }
