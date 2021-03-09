@@ -11,7 +11,7 @@ const Header = () => {
           <span>AuraMusic</span>
         </div>
         <div className="search">
-          <label for="search" id="toggle">
+          <label htmlFor="search" id="toggle">
             <span className="iconify" data-icon="fluent:search-28-filled" data-inline="false" ></span>
           </label>
           <input id="search" type="text" placeholder="Buscar en AuraMusic" />

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "./Header";
-import Imagen from '../images/foto-generica.png'
+import Player from '../components/Player';
+import Imagen from '../images/foto-generica.png';
 import '../styles/Reproductor.css';
 
 const Reproductor = () => {
@@ -42,6 +43,7 @@ const Reproductor = () => {
           </div>
         </section>
       </main>
+      <Player />
     </>
   );
 }
