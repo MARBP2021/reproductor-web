@@ -1,20 +1,34 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+:root {
+  --logo: #06BDF3;
+  --controls: #06BDF3;
+  --background-primary: #1B1C22;
+  --background-secondary: #0F0F10;
+  --text-primary: #efefef;
+  --text-secondary: #67686C;
+  --text-third: #AAAAAA;
+  --icon-primary: #efefef;
+  --icon-secondary: #67686C;
+  --input-primary: #1B1C22;
+  --font-primary: 'Poppins', sans-serif;
+  --font-regular: 400;
+  --font-semibold: 500;
+  --font-bold: 600;
+  --scroll-primary: #797979;
+  --scroll-secondary: #0F0F10;
 }
 
-#root {
-  height: 100vh;
-  overflow: scroll;
+body {
+  margin: 0;
+  font-family: var(--font-primary);
 }
 
 .limiter {
   height: 100%;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
 }
 
 .iconify {
-  color: #efefef;
+  color: var(--icon-primary);
 }
