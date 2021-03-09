@@ -1,11 +1,9 @@
 import React from 'react';
-// import Banner from './components/Banner';
-// import Form from './components/Form';
 import Reproductor from './components/Reproductor';
+// import Register from './components/Register';
+// import Form from './components/Form';
 
-function App() {
-  // <Banner />
-  // <Form />
+const App = () => {
   return (
     <>
       <Reproductor />
