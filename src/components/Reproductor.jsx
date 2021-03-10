@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import './css-components/Reproductor.css';
 import Logo from '../images/logo.png'
@@ -211,6 +212,21 @@ const Reproductor = () => {
 
 
     );
+=======
+import React from 'react';
+import Header from "./Header";
+import Main from './Main';
+import Player from './Player';
+
+const Reproductor = () => {
+  return (
+    <>
+      <Header />
+      <Main />
+      <Player />
+    </>
+  );
+>>>>>>> df6803df43f3bda93dd96046b1861642bd68e373
 }
 
 export default Reproductor;
