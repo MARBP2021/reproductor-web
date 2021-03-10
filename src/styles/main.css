@@ -29,6 +29,7 @@
   grid-template: repeat(3, 198px) / 1fr;
   grid-row-gap: 30px;
   height: auto;
+  overflow-x: hidden;
 }
 
 .section {
@@ -40,7 +41,7 @@
 
 .section__title {
   color: var(--text-primary);
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .banner {
@@ -64,6 +65,7 @@
 
 .banner img {
   border-radius: 10px;
+  height: 100%;
 }
 
 @media (min-width: 768px) {

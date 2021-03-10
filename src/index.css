@@ -3,12 +3,13 @@
   --controls: #06BDF3;
   --background-primary: #1B1C22;
   --background-secondary: #0F0F10;
-  --text-primary: #efefef;
+  --text-primary: #EFEFEF;
   --text-secondary: #67686C;
   --text-third: #AAAAAA;
-  --icon-primary: #efefef;
+  --icon-primary: #EFEFEF;
   --icon-secondary: #67686C;
   --input-primary: #1B1C22;
+  --border-primary: #AAAAAA;
   --font-primary: 'Poppins', sans-serif;
   --font-regular: 400;
   --font-semibold: 500;

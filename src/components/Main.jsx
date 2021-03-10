@@ -50,7 +50,7 @@ const Main = () => {
           </Carousel>
         </section>
         <section className="section">
-          <h2 className="section__title">Generos mas escuchados</h2>
+          <h2 className="section__title">Artistas en tendencia</h2>
           <Carousel {...options}>
             <div className='item banner'>
               <h3 className="banner__title banner__title--center">Genero</h3>
@@ -79,7 +79,7 @@ const Main = () => {
           </Carousel>
         </section>
         <section className="section">
-          <h2 className="section__title">Generos mas escuchados</h2>
+          <h2 className="section__title">Albumes mas valorados</h2>
           <Carousel {...options}>
             <div className='item banner'>
               <h3 className="banner__title banner__title--center">Genero</h3>
