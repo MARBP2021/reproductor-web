@@ -152,7 +152,11 @@ input[type="range"]::-ms-fill-upper {
   height: 22px;
 }
 
-.play {
+.controls__state[data-state="play"] .play {
+  display: none;
+}
+
+.controls__state[data-state="pause"] .pause {
   display: none;
 }
 

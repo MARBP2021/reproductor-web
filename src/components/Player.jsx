@@ -3,6 +3,18 @@ import "../styles/player.css";
 import banner from "../assets/images/banner.jpg";
 
 const Player = () => {
+  // Cambiando el icono play/pause
+  const changeState = () => {
+    const $control = document.querySelector(".controls__state");
+
+    if ($control.dataset.state === "play") {
+      $control.dataset.state = "pause";
+    } else {
+      $control.dataset.state = "play";
+    }
+  };
+
+  // Convirtiendo el tiempo a string
   const secondsToString = (seconds) => {
     let minute = Math.floor((seconds / 60) % 60);
     let second = seconds % 60;
@@ -10,6 +22,7 @@ const Player = () => {
     return minute + ":" + second;
   };
 
+  // Mostrando el tiempo actual de la cancion
   const showTime = (e) => {
     const $current = document.querySelector(".range__current");
     $current.innerText = secondsToString(e.target.value);
@@ -41,7 +54,11 @@ const Player = () => {
             data-icon="fluent:previous-20-filled"
             data-inline="false"
           ></span>
-          <div className="controls__state">
+          <div
+            className="controls__state"
+            data-state="pause"
+            onClick={changeState}
+          >
             <div className="play">
               <span
                 className="iconify"
