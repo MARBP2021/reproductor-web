@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   width: 100vw;
+  z-index: 999;
 }
 
 .header > .limiter {
@@ -22,7 +23,7 @@
   grid-template: 30px / 30px auto;
 }
 
-.logo > span{
+.logo > span {
   display: none;
 }
 

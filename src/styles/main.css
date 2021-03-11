@@ -2,8 +2,7 @@
   background-color: var(--background-primary);
   box-sizing: border-box;
   height: calc(100vh - 146px);
-  overflow: hidden scroll;
-  padding: 20px 15px;
+  overflow-y: scroll;
 }
 
 .main::-webkit-scrollbar {
@@ -12,11 +11,10 @@
 }
 
 .main::-webkit-scrollbar:vertical {
-  width: 10px;
+  width: 14px;
 }
 
-.main::-webkit-scrollbar-button:increment
-.main::-webkit-scrollbar-button {
+.main::-webkit-scrollbar-button:increment .main::-webkit-scrollbar-button {
   display: none;
 }
 
@@ -25,52 +23,84 @@
 }
 
 .main .limiter {
-  display: grid;
-  grid-template: repeat(3, 198px) / 1fr;
-  grid-row-gap: 30px;
   height: auto;
-  overflow-x: hidden;
-}
-
-.section {
-  display: grid;
-  grid-template: auto 150px / 1fr;
-  grid-row-gap: 15px;
-  height: fit-content;
+  padding: 20px 15px;
 }
 
 .section__title {
   color: var(--text-primary);
   font-size: 20px;
+  padding-bottom: 15px;
 }
 
-.banner {
-  height: 150px;
-  overflow: hidden;
-  width: 200px;
+.section__content {
+  display: grid;
+  grid-gap: 20px;
+  grid-template: auto / repeat(2, 1fr);
 }
 
-.banner__title {
-  color: var(--text-primary);
-  font-size: 20px;
-  font-weight: var(--font-semibold);
-  position: absolute;
-}
-
-.banner__title--center {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.banner img {
+.song {
   border-radius: 10px;
-  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.song__id {
+  display: none;
+}
+
+.song__name {
+  background-color: var(--alpha-dark);
+  color: var(--text-primary);
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.song img {
+  /* border-radius: 10px;
+  height: 100%; */
+}
+
+@media (min-width: 576px) {
+  .section__content {
+    grid-template: auto / repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 768px) {
   .main {
     height: calc(100vh - 150px);
+  }
+
+  .main .limiter {
     padding: 20px;
+  }
+
+  .section__content {
+    grid-template: auto / repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .main .limiter {
+    padding: 25px 20px;
+  }
+
+  .section__content {
+    grid-template: auto / repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .main .limiter {
+    padding: 30px 20px;
+  }
+
+  .section__content {
+    grid-template: auto / repeat(6, 1fr);
   }
 }

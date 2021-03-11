@@ -1,26 +1,28 @@
 :root {
-  --logo: #06BDF3;
-  --controls: #06BDF3;
-  --background-primary: #1B1C22;
-  --background-secondary: #0F0F10;
-  --text-primary: #EFEFEF;
-  --text-secondary: #67686C;
-  --text-third: #AAAAAA;
-  --icon-primary: #EFEFEF;
-  --icon-secondary: #67686C;
-  --input-primary: #1B1C22;
-  --border-primary: #AAAAAA;
-  --font-primary: 'Poppins', sans-serif;
+  --logo: #06bdf3;
+  --controls: #06bdf3;
+  --background-primary: #1b1c22;
+  --background-secondary: #0f0f10;
+  --text-primary: #efefef;
+  --text-secondary: #67686c;
+  --text-third: #aaaaaa;
+  --icon-primary: #efefef;
+  --icon-secondary: #67686c;
+  --input-primary: #1b1c22;
+  --border-primary: #aaaaaa;
+  --font-primary: "Poppins", sans-serif;
   --font-regular: 400;
   --font-semibold: 500;
   --font-bold: 600;
   --scroll-primary: #797979;
-  --scroll-secondary: #0F0F10;
+  --scroll-secondary: #0f0f10;
+  --alpha-dark: #00000099;
 }
 
 body {
   margin: 0;
   font-family: var(--font-primary);
+  overflow: hidden;
 }
 
 .limiter {
