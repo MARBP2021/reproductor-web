@@ -28,8 +28,24 @@ const Player = () => {
     $current.innerText = secondsToString(e.target.value);
   };
 
+  // Mostrando el reproductor oculto
+  document.onclick = (e) => {
+    if (e.target.className === "protector") {
+      const $main = document.querySelector(".main");
+
+      if ($main.dataset.size === "full") {
+        const $footer = document.querySelector(".footer");
+        const $control = document.querySelector(".controls__state");
+
+        $main.dataset.size = "short";
+        $footer.dataset.hidden = "false";
+        $control.dataset.state = "play";
+      }
+    }
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer" data-hidden="true">
       <div className="limiter">
         <div className="album">
           <img src={banner} alt="banner" className="album__banner" />

@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/banner.css';
+import React from "react";
+import "../styles/banner.css";
 
 const Banner = () => {
   return (
@@ -7,6 +7,6 @@ const Banner = () => {
       <h1 className="banner-title">musicfi</h1>
     </header>
   );
-}
+};
 
 export default Banner;

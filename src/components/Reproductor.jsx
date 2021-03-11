@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import Header from "./Header";
-import Main from './Main';
-import Player from './Player';
+import Main from "./Main";
+import Player from "./Player";
 
 const Reproductor = () => {
   return (
@@ -11,6 +11,6 @@ const Reproductor = () => {
       <Player />
     </>
   );
-}
+};
 
 export default Reproductor;

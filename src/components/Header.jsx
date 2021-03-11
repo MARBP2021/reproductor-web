@@ -5,10 +5,12 @@ import "../styles/header.css";
 const Header = () => {
   const name = "jfloresh631";
 
+  // Evaluando el tamaño de la pantalla
   const changeName = (name) => {
     return window.innerWidth < 768 ? name.substr(0, 1).toUpperCase() : name;
   };
 
+  // Cambiando el formato de nombre del usuario
   window.onresize = () => {
     const $userName = document.querySelector(".user__name");
     $userName.innerText = changeName(name);

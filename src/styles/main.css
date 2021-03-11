@@ -1,8 +1,17 @@
 .main {
   background-color: var(--background-primary);
   box-sizing: border-box;
-  height: calc(100vh - 146px);
   overflow-y: scroll;
+  transition: height 0.4s ease-in-out;
+  user-select: none;
+}
+
+.main[data-size="short"] {
+  height: calc(100vh - 146px);
+}
+
+.main[data-size="full"] {
+  height: calc(100vh - 70px);
 }
 
 .main::-webkit-scrollbar {
@@ -51,18 +60,24 @@
 
 .song__name {
   background-color: var(--alpha-dark);
+  bottom: 0;
   color: var(--text-primary);
   font-size: 14px;
-  position: absolute;
-  bottom: 0;
   left: 0;
-  width: 100%;
+  overflow: hidden;
   padding: 5px 10px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
-.song img {
-  /* border-radius: 10px;
-  height: 100%; */
+.protector {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 @media (min-width: 576px) {
@@ -72,7 +87,7 @@
 }
 
 @media (min-width: 768px) {
-  .main {
+  .main[data-size="short"] {
     height: calc(100vh - 150px);
   }
 

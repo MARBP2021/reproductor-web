@@ -54,7 +54,11 @@ const Register = ({ volverAComponentePrincipal }) => {
   return (
     <>
       <main className="registro">
-        <form className="registro__formulario" onSubmit={registrarUsuario} autoComplete="off">
+        <form
+          className="registro__formulario"
+          onSubmit={registrarUsuario}
+          autoComplete="off"
+        >
           <div className="registro__contenedor">
             <p className="registro__text">Usuario:</p>
 

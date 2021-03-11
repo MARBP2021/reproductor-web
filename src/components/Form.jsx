@@ -58,7 +58,11 @@ const Form = () => {
     <>
       {register ? (
         <main className="ingreso">
-          <form className="ingreso__formulario" onSubmit={verificarIngreso} autoComplete="off">
+          <form
+            className="ingreso__formulario"
+            onSubmit={verificarIngreso}
+            autoComplete="off"
+          >
             <div className="ingreso__contenedor">
               <p className="ingreso__text">Usuario o email:</p>
 

@@ -1,132 +1,157 @@
-@media (max-width:576px) {
-	:root {
-        /*banner superior */
-		--bannerHeight: 50px;
-		--bannerFontSize: 12px;
-		--bannerTitleMarginLeft: 5px;
-	}
+@media (max-width: 576px) {
+  :root {
+    /*banner superior */
+    --bannerHeight: 50px;
+    --bannerFontSize: 12px;
+    --bannerTitleMarginLeft: 5px;
+  }
 
-	.banner {
-		border-radius: 4px;
-		background: rgb(197,210,192);
-		background: linear-gradient(90deg, rgba(197,210,192,1) 0%, rgba(0,128,0,1) 0%, rgba(255,255,255,1) 100%);
-		height: var(--bannerHeight);
-		width: 100%;
-		display: flex;
-		align-items: center;
-		color: white;
-		font-style: italic;
-		font-size: var(--bannerFontSize);
-		box-shadow: 10px 5px 5px rgb(197,210,192);
-	}
+  .banner {
+    border-radius: 4px;
+    background: rgb(197, 210, 192);
+    background: linear-gradient(
+      90deg,
+      rgba(197, 210, 192, 1) 0%,
+      rgba(0, 128, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: var(--bannerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: var(--bannerFontSize);
+    box-shadow: 10px 5px 5px rgb(197, 210, 192);
+  }
 
-	.banner-title {
-		margin-left: var(--bannerTitleMarginLeft);
-	}
+  .banner-title {
+    margin-left: var(--bannerTitleMarginLeft);
+  }
 }
 
-@media (max-width:768px) {
-	:root {
-            /*banner superior */
-		--bannerHeight: 50px;
-		--bannerFontSize: 12px;
-		--bannerTitleMarginLeft: 5px;
-	}
+@media (max-width: 768px) {
+  :root {
+    /*banner superior */
+    --bannerHeight: 50px;
+    --bannerFontSize: 12px;
+    --bannerTitleMarginLeft: 5px;
+  }
 
-	.banner {
-		border-radius: 4px;
-		background: rgb(197,210,192);
-		background: linear-gradient(90deg, rgba(197,210,192,1) 0%, rgba(0,128,0,1) 0%, rgba(255,255,255,1) 100%);
-		height: var(--bannerHeight);
-		width: 100%;
-		display: flex;
-		align-items: center;
-		color: white;
-		font-style: italic;
-		font-size: var(--bannerFontSize);
-		box-shadow: 10px 5px 5px rgb(197,210,192);
-	}
+  .banner {
+    border-radius: 4px;
+    background: rgb(197, 210, 192);
+    background: linear-gradient(
+      90deg,
+      rgba(197, 210, 192, 1) 0%,
+      rgba(0, 128, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: var(--bannerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: var(--bannerFontSize);
+    box-shadow: 10px 5px 5px rgb(197, 210, 192);
+  }
 
-	.banner-title {
-		margin-left: var(--bannerTitleMarginLeft);
-	}
+  .banner-title {
+    margin-left: var(--bannerTitleMarginLeft);
+  }
 }
 
-@media (max-width:992px) {
-	:root {
-		--bannerHeight: 50px;
-		--bannerFontSize: 12px;
-		--bannerTitleMarginLeft: 5px;
-	}
+@media (max-width: 992px) {
+  :root {
+    --bannerHeight: 50px;
+    --bannerFontSize: 12px;
+    --bannerTitleMarginLeft: 5px;
+  }
 
-	.banner {
-		border-radius: 4px;
-		background: rgb(197,210,192);
-		background: linear-gradient(90deg, rgba(197,210,192,1) 0%, rgba(0,128,0,1) 0%, rgba(255,255,255,1) 100%);
-		height: var(--bannerHeight);
-		width: 100%;
-		display: flex;
-		align-items: center;
-		color: white;
-		font-style: italic;
-		font-size: var(--bannerFontSize);
-		box-shadow: 10px 5px 5px rgb(197,210,192);
-	}
+  .banner {
+    border-radius: 4px;
+    background: rgb(197, 210, 192);
+    background: linear-gradient(
+      90deg,
+      rgba(197, 210, 192, 1) 0%,
+      rgba(0, 128, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: var(--bannerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: var(--bannerFontSize);
+    box-shadow: 10px 5px 5px rgb(197, 210, 192);
+  }
 
-	.banner-title {
-		margin-left: var(--bannerTitleMarginLeft);
-	}
+  .banner-title {
+    margin-left: var(--bannerTitleMarginLeft);
+  }
 }
 
-@media(max-width:1400px) {
-	:root {
-		--bannerHeight: 100px;
-		--bannerFontSize: 24px;
-		--bannerTitleMarginLeft: 5px;
-	}
+@media (max-width: 1400px) {
+  :root {
+    --bannerHeight: 100px;
+    --bannerFontSize: 24px;
+    --bannerTitleMarginLeft: 5px;
+  }
 
-	.banner {
-		border-radius: 4px;
-		background: rgb(197,210,192);
-		background: linear-gradient(90deg, rgba(197,210,192,1) 0%, rgba(0,128,0,1) 0%, rgba(255,255,255,1) 100%);
-		height: var(--bannerHeight);
-		width: 100%;
-		display: flex;
-		align-items: center;
-		color: white;
-		font-style: italic;
-		font-size: var(--bannerFontSize);
-		box-shadow: 10px 5px 5px rgb(197,210,192);
-	}
+  .banner {
+    border-radius: 4px;
+    background: rgb(197, 210, 192);
+    background: linear-gradient(
+      90deg,
+      rgba(197, 210, 192, 1) 0%,
+      rgba(0, 128, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: var(--bannerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: var(--bannerFontSize);
+    box-shadow: 10px 5px 5px rgb(197, 210, 192);
+  }
 
-	.banner-title {
-		margin-left: var(--bannerTitleMarginLeft);
-	}
+  .banner-title {
+    margin-left: var(--bannerTitleMarginLeft);
+  }
 }
 
-@media(min-width:1400px) {
-	:root {
-        /*banner superior */
-		--bannerHeight: 100px;
-		--bannerFontSize: 24px;
-		--bannerTitleMarginLeft: 10px;
-	}
+@media (min-width: 1400px) {
+  :root {
+    /*banner superior */
+    --bannerHeight: 100px;
+    --bannerFontSize: 24px;
+    --bannerTitleMarginLeft: 10px;
+  }
 
-	.banner {
-		border-radius: 4px;
-		background: rgb(197,210,192);
-		background: linear-gradient(90deg, rgba(197,210,192,1) 0%, rgba(0,128,0,1) 0%, rgba(255,255,255,1) 100%);
-		height: var(--bannerHeight);
-		width: 100%;
-		display: flex;
-		align-items: center;
-		color: white;
-		font-style: italic;
-		font-size: var(--bannerFontSize);
-		box-shadow: 10px 5px 5px rgb(197,210,192);
-	}
+  .banner {
+    border-radius: 4px;
+    background: rgb(197, 210, 192);
+    background: linear-gradient(
+      90deg,
+      rgba(197, 210, 192, 1) 0%,
+      rgba(0, 128, 0, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: var(--bannerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-style: italic;
+    font-size: var(--bannerFontSize);
+    box-shadow: 10px 5px 5px rgb(197, 210, 192);
+  }
 
-	.banner-title {
-		margin-left: var(--bannerTitleMarginLeft);
-	}
+  .banner-title {
+    margin-left: var(--bannerTitleMarginLeft);
+  }
 }
