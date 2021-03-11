@@ -8,18 +8,23 @@
   --buttonWidth: 300px;
 }
 
+
 .ingreso {
   height: 640px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  
+
 }
 
 .ingreso__formulario {
   border-top: solid 1px rgb(206, 206, 206);
   height: var(--ingreso__formularioHEIGHT);
   width: var(--ingreso__formularioWIDTH);
+  
 }
 
 .ingreso__contenedor {
@@ -29,6 +34,7 @@
 
 .ingreso__text {
   font-size: var(--inputTextSize);
+  color:   var(--text-primary);
 }
 
 .ingreso__usuario {
@@ -46,7 +52,7 @@
   font-size: var(--buttonFontSize);
   border-radius: 5px;
   color: white;
-  background-color: #003780;
+  background-color: #02234e;
   border-style: none;
   font-weight: bold;
 }

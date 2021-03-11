@@ -4,6 +4,7 @@
   height: calc(100vh - 146px);
   overflow: hidden scroll;
   padding: 20px 15px;
+  overflow-x: hidden
 }
 
 .main::-webkit-scrollbar {
