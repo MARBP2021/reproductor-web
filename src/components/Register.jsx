@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import "../styles/Register.css";
 
 const Register = ({ volverAComponentePrincipal }) => {
-
-  const [emailError, setEmailError] = useState()
-  const [passwordError, setPasswordError] = useState('span');
-
   const [datos, setDatos] = useState({
     user: "",
     email: "",
@@ -47,9 +43,7 @@ const Register = ({ volverAComponentePrincipal }) => {
   const registrarUsuario = async (e) => {
     e.preventDefault();
 
-
-
-    if(user === "" || email === "" || password === "") alert("No pueden haber campos vacios.");
+    if (user === "" || email === "" || password === "") alert("No pueden haber campos vacios.");
 
     await guardarUsuario(user, email, password);
 
