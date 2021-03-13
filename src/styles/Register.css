@@ -13,11 +13,13 @@
 }
 
 .registro__input {
-  width: 300px;
+  width: 295px;
   height: 30px;
   border-radius: 5px;
   border: solid 0.5px rgba(128, 128, 128, 0.582);
   font-size: 25px;
+  margin-bottom: 30px;
+  padding-left: 5px
 }
 
 .registro__button {
@@ -30,9 +32,28 @@
   color: white;
   background-color: #5eb500;
   font-weight: bold;
+  box-shadow: 2px 2px 2px #4b9100;
 }
+
+.span{
+  font-size: 10px;
+  color: red;
+  font-style: italic;
+  visibility:hidden;
+}
+
+.span-visible{
+  font-size: 10px;
+  color: red;
+  font-style: italic;
+  
+}
+
+
+
 .registro__text {
   font-size: 20px;
+  color: white;
 }
 @media (min-width: 992px) {
   :root {

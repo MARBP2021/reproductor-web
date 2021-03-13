@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 import Header from "./Header";
-import Main from './Main';
-import Player from './Player';
+import Main from "./Main";
+import Player from "./Player";
 
-const Reproductor = () => {
+const Reproductor = ({setearUsuario}) => {
   return (
     <>
-      <Header />
+      <Header 
+       user = {setearUsuario}
+      />
       <Main />
       <Player />
     </>
   );
-}
+};
 
 export default Reproductor;

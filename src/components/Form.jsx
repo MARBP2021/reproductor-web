@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Register from "./Register";
+import Banner from './Banner';
 import '../styles/Form.css';
 
-const Form = () => {
+const Form = ({permitirIngreso, capturarUsuario}) => {
   const [register, setRegister] = useState(true);
 
   const aRegistro = () => setRegister(false);
@@ -27,8 +28,9 @@ const Form = () => {
     e.preventDefault();
 
     if (email === "" || password === "") alert("ingrese un email valido.");
-
+    
     await traerDatos(email, password);
+    
   };
 
   const traerDatos = async (email, password) => {
@@ -47,7 +49,10 @@ const Form = () => {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        console.log(data)
+        permitirIngreso(data.id);
+        capturarUsuario(data.user);
+        
       })
       .catch(function (err) {
         console.error(err);
@@ -56,11 +61,17 @@ const Form = () => {
 
   return (
     <>
+    <Banner />
       {register ? (
+
         <main className="ingreso">
-          <form className="ingreso__formulario" onSubmit={verificarIngreso} autoComplete="off">
+          <form
+            className="ingreso__formulario"
+            onSubmit={verificarIngreso}
+            autoComplete="off"
+          >
             <div className="ingreso__contenedor">
-              <p className="ingreso__text">Usuario o email:</p>
+              <p className="ingreso__text">Ingrese su email:</p>
 
               <input
                 type="text"
@@ -93,7 +104,7 @@ const Form = () => {
           </form>
         </main>
       ) : (
-        <Register volverAComponentePrincipal={volverAComponentePrincipal} />
+        <Register volverAComponentePrincipal = {volverAComponentePrincipal} />
       )}
     </>
   );

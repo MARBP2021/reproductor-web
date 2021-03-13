@@ -8,6 +8,14 @@
   --buttonWidth: 300px;
 }
 
+body {
+
+  background-color: var(--background-primary);
+  font-family: var(--font-primary);
+
+
+}
+
 
 .ingreso {
   height: 640px;
@@ -55,6 +63,7 @@
   background-color: #02234e;
   border-style: none;
   font-weight: bold;
+  box-shadow: 2px 2px 2px #00132c;
 }
 
 .ingreso__button--nuevoUsuario {
@@ -67,6 +76,7 @@
   color: white;
   background-color: #5eb500;
   font-weight: bold;
+  box-shadow: 2px 2px 2px #4b9100;
 }
 @media (min-width: 992px) {
   :root {

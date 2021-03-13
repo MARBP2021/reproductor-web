@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "../styles/Register.css";
 
 const Register = ({ volverAComponentePrincipal }) => {
+
+  const [emailError, setEmailError] = useState()
+  const [passwordError, setPasswordError] = useState('span');
+
   const [datos, setDatos] = useState({
     user: "",
     email: "",
@@ -43,8 +47,9 @@ const Register = ({ volverAComponentePrincipal }) => {
   const registrarUsuario = async (e) => {
     e.preventDefault();
 
-    if (user === "" || email === "" || password === "")
-      alert("ingrese un email valido.");
+
+
+    if(user === "" || email === "" || password === "") alert("No pueden haber campos vacios.");
 
     await guardarUsuario(user, email, password);
 
@@ -54,7 +59,11 @@ const Register = ({ volverAComponentePrincipal }) => {
   return (
     <>
       <main className="registro">
-        <form className="registro__formulario" onSubmit={registrarUsuario} autoComplete="off">
+        <form
+          className="registro__formulario"
+          onSubmit={registrarUsuario}
+          autoComplete="off"
+        >
           <div className="registro__contenedor">
             <p className="registro__text">Usuario:</p>
 
@@ -82,6 +91,7 @@ const Register = ({ volverAComponentePrincipal }) => {
               name="password"
               onChange={capturarInput}
             />
+            {/*<span className = {passwordError}>La contraseña debe contener al menos un caracter especial(·$%&@)</span> */}
 
             <button type="submit" className="registro__button">
               Registrarse
