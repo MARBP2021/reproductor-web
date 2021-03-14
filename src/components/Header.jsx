@@ -3,21 +3,14 @@ import logo from "../assets/icons/logo.svg";
 import "../styles/header.css";
 
 const Header = ({ user }) => {
-  
-  const [userName,setName] = useState(user);
+  const [userName, setName] = useState(user);
 
-  window.onresize = () => {
-    
-    //
-    
+  const changeName = () =>
+    window.innerWidth < 768 ? setName(user[0].toUpperCase()) : setName(user);
 
-    if(window.innerWidth < 768) {
-      setName(user[0].toUpperCase());
-    }else{
-      setName(user);
-    }
-  }
-  
+  // Cambiando el nombre dependiendo del tamaño del dispositivo
+  document.addEventListener("DOMContentLoaded", changeName);
+  window.addEventListener("resize", changeName);
 
   return (
     <header className="header">
