@@ -3,15 +3,21 @@ import "../styles/Register.css";
 
 const Register = ({ goToLogin}) => {
 
+
+  const [registroExitoso, setRegistroExitoso] = useState('no-registro');
+
   const [register, setLogin] = useState(true);
 
   // const goToLogin = () => setLogin(false);
   // const volverAComponentePrincipal = (e) => setLogin(true);
 
+  const [errorRegistro, setErrorRegistro] = useState('no-error-vacio')
+  
   const [datos, setDatos] = useState({
     user: "",
     email: "",
     password: "",
+
   });
 
 
@@ -25,12 +31,6 @@ const Register = ({ goToLogin}) => {
 
   const { user, email, password } = datos;
 
-  if(password.length < 8) {
-    
-    console.log("la contrasenia no puede kalsjdksad")
-
-    
-  }
 
 
   const guardarUsuario = async (user, email, password) => {
@@ -47,20 +47,26 @@ const Register = ({ goToLogin}) => {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        console.log(data.mensaje);
       })
       .catch(function (err) {
         console.error(err);
       });
   };
 
-  const registrarUsuario = async (e) => {
+  const registrarUsuario = async e => {
     e.preventDefault();
-    //if (user === "" || email === "" || password === "")
-    //alert("No pueden haber campos vacios.");
-    await guardarUsuario(user, email, password);
+    
+    if (user === "" || email === "" || password === "") {
+      setErrorRegistro('error-vacio');
+      
+    } else {
+      setErrorRegistro('no-error-vacio');
+      setRegistroExitoso('registro-exitoso');
+      await guardarUsuario(user, email, password);
+    
+    }
 
-    // volverAComponentePrincipal();
   };
 
   return (
@@ -69,6 +75,8 @@ const Register = ({ goToLogin}) => {
         <form className="form" onSubmit={registrarUsuario}>
           <div>
             <div className="form__grid">
+              <span id = {errorRegistro}>No pueden haber campos vacios</span>
+              <span id = {registroExitoso}>Usuario registrado con éxito. Da click en Iniciar Sesión para ingresar o refrescá la pagina.</span>
               <label className="form__label" htmlFor="user">
                 Usuario
               </label>

@@ -1,3 +1,5 @@
+
+
 .registro {
   display: flex;
   height: 640px;
@@ -48,12 +50,37 @@
   font-style: italic;
   
 }
-
-
-
 .registro__text {
   font-size: 20px;
   color: white;
+}
+
+#no-error-vacio{
+
+  display:none;
+
+}
+
+#error-vacio {
+
+  display:inline;
+  color:rgb(248, 74, 74);
+  font-size: 13px;
+  font-style: italic;
+}
+
+#no-registro{
+
+  display:none;
+
+}
+
+#registro-exitoso {
+
+  display:inline;
+  color:rgb(0, 233, 19);
+  font-size: 13px;
+  font-style: italic;
 }
 @media (min-width: 992px) {
   :root {
@@ -104,3 +131,4 @@
     height: 60px;
   }
 }
+

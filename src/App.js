@@ -8,15 +8,25 @@ const App = () => {
 
   const [logged, setLogged] = useState(false)
 
-  const capturarId = id => id ? setLogged(true): null;
+  const capturarId = (id, responseUser) => id && responseUser ? setLogged(true): null;
    
-  const user = localStorage.getItem("user");
+
+  let user = localStorage.getItem("user");
   
+  if(user ==="" || user ==="undefined"){
+    
+    user = false;
+    
+    localStorage.removeItem("user");
+
+  }
+
+
 
   return (
   <>
 
-  {logged || user? <Reproductor /> : <Form capturarId = {capturarId}/>}
+  {logged || user ? <Reproductor /> : <Form capturarId = {capturarId}/>}
   
   </>
   
