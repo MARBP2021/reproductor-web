@@ -42,6 +42,7 @@ const Login = ({goToRegister, goToPlay, capturarId}) => {
     .then(function (data) {
 
       const{user,id}= data;
+      
       //aqui se envian el id y el usuario hacia APP, y en caso de que se envien los dos, el usuario podra ingresar.
       
       if(user && id){

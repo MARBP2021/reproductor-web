@@ -6,7 +6,7 @@ const Register = ({ goToLogin}) => {
 
   const [registroExitoso, setRegistroExitoso] = useState('no-registro');
 
-  const [register, setLogin] = useState(true);
+  // const [register, setLogin] = useState(true);
 
   // const goToLogin = () => setLogin(false);
   // const volverAComponentePrincipal = (e) => setLogin(true);
