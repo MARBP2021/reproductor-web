@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import logo from "../assets/icons/logo.svg";
 import "../styles/header.css";
 
-const Header = ({ user }) => {
+const Header = () => {
+  // Recuperando el nombre de usuario desde localstorage
+  const user = localStorage.getItem("user");
+
   const [userName, setName] = useState(user);
 
+  // Cambiando el nombre dependiendo del tamaño del dispositivo
   const changeName = () =>
     window.innerWidth < 768 ? setName(user[0].toUpperCase()) : setName(user);
 
-  // Cambiando el nombre dependiendo del tamaño del dispositivo
   document.addEventListener("DOMContentLoaded", changeName);
   window.addEventListener("resize", changeName);
 

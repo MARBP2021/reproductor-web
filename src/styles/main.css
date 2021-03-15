@@ -6,6 +6,12 @@
   user-select: none;
 }
 
+.main--banner {
+  height: calc(100% - 70px);
+  overflow: initial;
+  padding: 60px 20px 20px 20px;
+}
+
 .main[data-size="short"] {
   height: calc(100vh - 146px);
 }

@@ -16,6 +16,12 @@
   padding: 0 15px;
 }
 
+.header--banner .limiter {
+  display: flex;
+  justify-content: center;
+  position: initial;
+}
+
 .logo {
   align-items: center;
   display: grid;
@@ -25,6 +31,14 @@
 
 .logo > span {
   display: none;
+}
+
+.logo--banner > span {
+  display: initial;
+  color: var(--logo);
+  display: initial;
+  font-size: 22px;
+  font-weight: var(--font-bold);
 }
 
 .search {

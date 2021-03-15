@@ -3,12 +3,10 @@ import Header from "./Header";
 import Main from "./Main";
 import Player from "./Player";
 
-const Reproductor = ({setearUsuario}) => {
+const Reproductor = () => {
   return (
     <>
-      <Header 
-       user = {setearUsuario}
-      />
+      <Header />
       <Main />
       <Player />
     </>

@@ -9,6 +9,7 @@
   --icon-primary: #efefef;
   --icon-secondary: #67686c;
   --input-primary: #1b1c22;
+  --input-secondary: #0f0f10;
   --border-primary: #aaaaaa;
   --font-primary: "Poppins", sans-serif;
   --font-regular: 400;
@@ -20,9 +21,11 @@
 }
 
 body {
-  margin: 0;
   font-family: var(--font-primary);
-  overflow: hidden;
+}
+
+#root {
+  height: 100%;
 }
 
 .limiter {
@@ -30,7 +33,7 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .iconify {

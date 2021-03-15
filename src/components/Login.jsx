@@ -1,38 +1,40 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../styles/form.css";
 
-const Register = ({ event }) => {
-  const goToLogin = () => {
-    event(true);
+const Login = ({ event }) => {
+  const goToRegister = () => {
+    event(false);
   };
 
-  const [register, setLogin] = useState(true);
-
-  // const goToLogin = () => setLogin(false);
-  // const volverAComponentePrincipal = (e) => setLogin(true);
-
-  const [datos, setDatos] = useState({
-    user: "",
+  const [login, setIngreso] = useState({
     email: "",
     password: "",
   });
 
-  const capturarInput = (e) => {
-    setDatos({
-      ...datos,
+  const catchInput = (e) => {
+    setIngreso({
+      ...login,
       [e.target.name]: [e.target.value],
     });
   };
 
-  const { user, email, password } = datos;
+  const { email, password } = login;
 
-  const guardarUsuario = async (user, email, password) => {
+  const verificarIngreso = async (e) => {
+    e.preventDefault();
+
+    if (email === "" || password === "") alert("ingrese un email valido.");
+
+    await traerDatos(email, password);
+  };
+
+  const traerDatos = async (email, password) => {
     const url = `https://interactivecode.000webhostapp.com/api/oauth/`;
 
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `user=${user}&email=${email}&password=${password}`,
+      body: `email=${email}&password=${password}`,
     };
 
     await fetch(url, options)
@@ -40,43 +42,19 @@ const Register = ({ event }) => {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        // permitirIngreso(data.id);
+        // capturarUsuario(data.user);
       })
       .catch(function (err) {
         console.error(err);
       });
   };
 
-  const registrarUsuario = async (e) => {
-    e.preventDefault();
-
-    //if (user === "" || email === "" || password === "")
-    //alert("No pueden haber campos vacios.");
-
-    await guardarUsuario(user, email, password);
-
-    // volverAComponentePrincipal();
-  };
-
   return (
     <>
       <main className="main main--banner">
-        <form className="form" onSubmit={registrarUsuario}>
+        <form className="form" onSubmit={verificarIngreso}>
           <div>
-            <div className="form__grid">
-              <label className="form__label" htmlFor="user">
-                Usuario
-              </label>
-              <input
-                id="user"
-                type="text"
-                className="form__input"
-                name="email"
-                placeholder="jhondoe"
-                onChange={capturarInput}
-                autoComplete="username"
-              />
-            </div>
             <div className="form__grid">
               <label className="form__label" htmlFor="email">
                 Email
@@ -87,7 +65,7 @@ const Register = ({ event }) => {
                 className="form__input"
                 name="email"
                 placeholder="example@gmail.com"
-                onChange={capturarInput}
+                onChange={catchInput}
                 autoComplete="username"
               />
             </div>
@@ -102,16 +80,20 @@ const Register = ({ event }) => {
                 name="password"
                 placeholder="********"
                 autoComplete="current-password"
-                onChange={capturarInput}
+                onChange={catchInput}
               />
             </div>
           </div>
           <div>
             <button type="submit" className="button">
-              Registrarse
+              Ingresar
             </button>
-            <button className="button button--secondary" onClick={goToLogin}>
-              Iniciar sesion
+            <button
+              type="submit"
+              className="button button--secondary"
+              onClick={goToRegister}
+            >
+              Crear cuenta
             </button>
           </div>
         </form>
@@ -120,4 +102,4 @@ const Register = ({ event }) => {
   );
 };
 
-export default Register;
+export default Login;

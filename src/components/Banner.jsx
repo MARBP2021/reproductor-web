@@ -4,13 +4,13 @@ import logo from "../assets/icons/logo.svg";
 
 const Banner = () => {
   return (
-    <header className="header">
-    <div className="limiter">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-        <span>AuraMusic</span>
-    </div>
-    </div>
+    <header className="header header--banner">
+      <div className="limiter">
+        <div className="logo logo--banner">
+          <img src={logo} alt="Logo" />
+          <span>AuraMusic</span>
+        </div>
+      </div>
     </header>
   );
 };
