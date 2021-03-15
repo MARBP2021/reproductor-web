@@ -55,3 +55,28 @@
   color: var(--logo);
   font-weight: var(--font-semibold);
 }
+
+.no-error{
+  display:none;
+}
+.error-message {
+  display:inline;
+  color:rgb(248, 74, 74);
+  font-size: 13px;
+  font-style: italic
+}
+
+.datos-ok {
+  display:none;
+
+}
+
+.datos-error {
+
+  display:inline;
+  color:rgb(248, 74, 74);
+  font-size: 13px;
+  font-style: italic;
+
+
+}

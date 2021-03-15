@@ -1,12 +1,26 @@
 // import React, { useState } from "react";
-import React from "react";
+import React, {useState} from "react";
 import Reproductor from "./components/Reproductor";
 import Form from "./components/Form";
 
 const App = () => {
-  const logged = localStorage.getItem("user") ? true : false;
+  
 
-  return <>{logged ? <Reproductor /> : <Form />}</>;
+  const [logged, setLogged] = useState(false)
+
+  const capturarId = id => id ? setLogged(true): null;
+   
+  const user = localStorage.getItem("user");
+  
+
+  return (
+  <>
+
+  {logged || user? <Reproductor /> : <Form capturarId = {capturarId}/>}
+  
+  </>
+  
+  )
 };
 
 export default App;

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../styles/Register.css";
 
-const Register = ({ event }) => {
-  const goToLogin = () => {
-    event(true);
-  };
+const Register = ({ goToLogin}) => {
 
   const [register, setLogin] = useState(true);
 
@@ -17,6 +14,8 @@ const Register = ({ event }) => {
     password: "",
   });
 
+
+
   const capturarInput = (e) => {
     setDatos({
       ...datos,
@@ -25,6 +24,14 @@ const Register = ({ event }) => {
   };
 
   const { user, email, password } = datos;
+
+  if(password.length < 8) {
+    
+    console.log("la contrasenia no puede kalsjdksad")
+
+    
+  }
+
 
   const guardarUsuario = async (user, email, password) => {
     const url = `https://interactivecode.000webhostapp.com/api/oauth/`;
@@ -49,10 +56,8 @@ const Register = ({ event }) => {
 
   const registrarUsuario = async (e) => {
     e.preventDefault();
-
     //if (user === "" || email === "" || password === "")
     //alert("No pueden haber campos vacios.");
-
     await guardarUsuario(user, email, password);
 
     // volverAComponentePrincipal();
@@ -71,10 +76,10 @@ const Register = ({ event }) => {
                 id="user"
                 type="text"
                 className="form__input"
-                name="email"
+                name="user"
                 placeholder="jhondoe"
                 onChange={capturarInput}
-                autoComplete="username"
+                //autoComplete="username"
               />
             </div>
             <div className="form__grid">
@@ -83,12 +88,12 @@ const Register = ({ event }) => {
               </label>
               <input
                 id="email"
-                type="text"
+                type="email"
                 className="form__input"
                 name="email"
                 placeholder="example@gmail.com"
                 onChange={capturarInput}
-                autoComplete="username"
+                //autoComplete="username"
               />
             </div>
             <div className="form__grid">
@@ -96,21 +101,32 @@ const Register = ({ event }) => {
                 Password
               </label>
               <input
+
                 id="password"
                 type="password"
                 className="form__input"
                 name="password"
                 placeholder="********"
-                autoComplete="current-password"
+                //autoComplete="current-password"
                 onChange={capturarInput}
+
               />
+
+
             </div>
           </div>
           <div>
             <button type="submit" className="button">
               Registrarse
             </button>
-            <button className="button button--secondary" onClick={goToLogin}>
+            <button 
+              
+              className="button button--secondary" 
+              onClick={goToLogin}
+              
+              
+              >
+
               Iniciar sesion
             </button>
           </div>

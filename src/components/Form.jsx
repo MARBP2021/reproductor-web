@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import Banner from "./Banner";
 import Register from "./Register";
 import Login from "./Login";
-import "../styles/form.css";
+import "../styles/Form.css";
 
-const Form = () => {
+const Form = ({capturarId}) => {
   const [login, hideForm] = useState(true);
 
-  const changeForm = (value) => {
-    hideForm();
-  };
+  const goToRegister= () => hideForm(false);
+  const goToLogin = () => hideForm(true)
 
   return (
     <>
+    
       <Banner />
-      {login ? <Login event={changeForm} /> : <Register event={changeForm} />}
+      {login ? <Login goToRegister= {goToRegister} capturarId = {capturarId} /> : <Register goToLogin = {goToLogin} />}
+    
+    
     </>
   );
 };
