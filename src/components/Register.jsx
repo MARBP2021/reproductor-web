@@ -1,37 +1,16 @@
 import React, { useState } from "react";
-import "../styles/Register.css";
+import "../styles/register.css";
 
-const Register = ({ goToLogin}) => {
-
-
-  const [registroExitoso, setRegistroExitoso] = useState('no-registro');
-
-  // const [register, setLogin] = useState(true);
-
-  // const goToLogin = () => setLogin(false);
-  // const volverAComponentePrincipal = (e) => setLogin(true);
-
-  const [errorRegistro, setErrorRegistro] = useState('no-error-vacio')
-  
-  const [datos, setDatos] = useState({
-    user: "",
-    email: "",
-    password: "",
-
-  });
-
-
+const Register = ({ goToLogin }) => {
+  const [registroExitoso, setRegistroExitoso] = useState("no-registro");
+  const [errorRegistro, setErrorRegistro] = useState("no-error-vacio");
+  const [datos, setDatos] = useState({ user: "", email: "", password: "" });
 
   const capturarInput = (e) => {
-    setDatos({
-      ...datos,
-      [e.target.name]: [e.target.value],
-    });
+    setDatos({ ...datos, [e.target.name]: [e.target.value] });
   };
 
   const { user, email, password } = datos;
-
-
 
   const guardarUsuario = async (user, email, password) => {
     const url = `https://interactivecode.000webhostapp.com/api/oauth/`;
@@ -54,19 +33,16 @@ const Register = ({ goToLogin}) => {
       });
   };
 
-  const registrarUsuario = async e => {
+  const registrarUsuario = async (e) => {
     e.preventDefault();
-    
-    if (user === "" || email === "" || password === "") {
-      setErrorRegistro('error-vacio');
-      
-    } else {
-      setErrorRegistro('no-error-vacio');
-      setRegistroExitoso('registro-exitoso');
-      await guardarUsuario(user, email, password);
-    
-    }
 
+    if (user === "" || email === "" || password === "") {
+      setErrorRegistro("error-vacio");
+    } else {
+      setErrorRegistro("no-error-vacio");
+      setRegistroExitoso("registro-exitoso");
+      await guardarUsuario(user, email, password);
+    }
   };
 
   return (
@@ -75,8 +51,11 @@ const Register = ({ goToLogin}) => {
         <form className="form" onSubmit={registrarUsuario}>
           <div>
             <div className="form__grid">
-              <span id = {errorRegistro}>No pueden haber campos vacios</span>
-              <span id = {registroExitoso}>Usuario registrado con éxito. Da click en Iniciar Sesión para ingresar o refrescá la pagina.</span>
+              <span id={errorRegistro}>No pueden haber campos vacios</span>
+              <span id={registroExitoso}>
+                Usuario registrado con éxito. Da click en Iniciar Sesión para
+                ingresar o refrescá la pagina.
+              </span>
               <label className="form__label" htmlFor="user">
                 Usuario
               </label>
@@ -87,7 +66,7 @@ const Register = ({ goToLogin}) => {
                 name="user"
                 placeholder="jhondoe"
                 onChange={capturarInput}
-                //autoComplete="username"
+                autoComplete="username"
               />
             </div>
             <div className="form__grid">
@@ -101,7 +80,7 @@ const Register = ({ goToLogin}) => {
                 name="email"
                 placeholder="example@gmail.com"
                 onChange={capturarInput}
-                //autoComplete="username"
+                autoComplete="username"
               />
             </div>
             <div className="form__grid">
@@ -109,32 +88,21 @@ const Register = ({ goToLogin}) => {
                 Password
               </label>
               <input
-
                 id="password"
                 type="password"
                 className="form__input"
                 name="password"
                 placeholder="********"
-                //autoComplete="current-password"
+                autoComplete="current-password"
                 onChange={capturarInput}
-
               />
-
-
             </div>
           </div>
           <div>
             <button type="submit" className="button">
               Registrarse
             </button>
-            <button 
-              
-              className="button button--secondary" 
-              onClick={goToLogin}
-              
-              
-              >
-
+            <button className="button button--secondary" onClick={goToLogin}>
               Iniciar sesion
             </button>
           </div>
