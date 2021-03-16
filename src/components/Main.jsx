@@ -1,194 +1,168 @@
-import React, {useState,useEffect} from "react";
-import banner from "../assets/images/banner.jpg";
+import React, { useState, useEffect } from "react";
+import Player from "./Player";
 import "../styles/main.css";
 
 const Main = () => {
+  const [count, setCount] = useState(false);
+  const [ids, setIds] = useState(["", "", "", "", ""]);
+  const [names, setNames] = useState(["", "", "", "", ""]);
+  const [banners, setBanners] = useState(["", "", "", "", ""]);
 
-
-  const [count,setCount] = useState(false);
-
-  const [orbinson, setOrbinson] = useState();
-
-
-  const [music, setMusic] = useState([])
-  
-  const [Artist1,Artist2,Artist3,Artist4,Artist5] = music;
-
-  const api = async () => {
-      
-    
+  const fetchData = async () => {
     await fetch(`https://interactivecode.000webhostapp.com/api/music/`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      
-      const datos = data;
-      setMusic(datos);
-    })
-    .catch(function (err) {
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setIds([data[0].id, data[1].id, data[2].id, data[3].id, data[4].id]);
+        setNames([
+          data[0].name,
+          data[1].name,
+          data[2].name,
+          data[3].name,
+          data[4].name,
+        ]);
+        setBanners([
+          data[0].banner,
+          data[1].banner,
+          data[2].banner,
+          data[3].banner,
+          data[4].banner,
+        ]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-      console.error(err);
-
-    });
-  }
-
-
-  useEffect ( () => {
-
-    api();
-
-  }, [count])
+  useEffect(() => {
+    fetchData();
+  }, [count]);
 
   return (
-   
     <main className="main" data-size="full">
       <div className="limiter">
         <section className="section">
           <h2 className="section__title">Lista de canciones</h2>
           <div className="section__content">
             <div className="song">
-              <span className="song__id"></span>
-              <img src={banner} alt="banner"/>
-              <h3 className="song__name"></h3>
+              <span className="song__id">{ids[0]}</span>
+              <img src={`data:image/jpeg;base64,${banners[0]}`} alt="banner" />
+              <h3 className="song__name">{names[0]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">2</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[1]}</span>
+              <img src={`data:image/jpeg;base64,${banners[1]}`} alt="banner" />
+              <h3 className="song__name">{names[1]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">3</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[2]}</span>
+              <img src={`data:image/jpeg;base64,${banners[2]}`} alt="banner" />
+              <h3 className="song__name">{names[2]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">4</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[3]}</span>
+              <img src={`data:image/jpeg;base64,${banners[3]}`} alt="banner" />
+              <h3 className="song__name">{names[3]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">5</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[4]}</span>
+              <img src={`data:image/jpeg;base64,${banners[4]}`} alt="banner" />
+              <h3 className="song__name">{names[4]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">6</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[0]}</span>
+              <img src={`data:image/jpeg;base64,${banners[0]}`} alt="banner" />
+              <h3 className="song__name">{names[0]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">7</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[1]}</span>
+              <img src={`data:image/jpeg;base64,${banners[1]}`} alt="banner" />
+              <h3 className="song__name">{names[1]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">8</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[2]}</span>
+              <img src={`data:image/jpeg;base64,${banners[2]}`} alt="banner" />
+              <h3 className="song__name">{names[2]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">9</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[3]}</span>
+              <img src={`data:image/jpeg;base64,${banners[3]}`} alt="banner" />
+              <h3 className="song__name">{names[3]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">10</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[4]}</span>
+              <img src={`data:image/jpeg;base64,${banners[4]}`} alt="banner" />
+              <h3 className="song__name">{names[4]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">11</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[0]}</span>
+              <img src={`data:image/jpeg;base64,${banners[0]}`} alt="banner" />
+              <h3 className="song__name">{names[0]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">12</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[1]}</span>
+              <img src={`data:image/jpeg;base64,${banners[1]}`} alt="banner" />
+              <h3 className="song__name">{names[1]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">13</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[2]}</span>
+              <img src={`data:image/jpeg;base64,${banners[2]}`} alt="banner" />
+              <h3 className="song__name">{names[2]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">14</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[3]}</span>
+              <img src={`data:image/jpeg;base64,${banners[3]}`} alt="banner" />
+              <h3 className="song__name">{names[3]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">15</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[4]}</span>
+              <img src={`data:image/jpeg;base64,${banners[4]}`} alt="banner" />
+              <h3 className="song__name">{names[4]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">16</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[0]}</span>
+              <img src={`data:image/jpeg;base64,${banners[0]}`} alt="banner" />
+              <h3 className="song__name">{names[0]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">17</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[1]}</span>
+              <img src={`data:image/jpeg;base64,${banners[1]}`} alt="banner" />
+              <h3 className="song__name">{names[1]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">18</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[2]}</span>
+              <img src={`data:image/jpeg;base64,${banners[2]}`} alt="banner" />
+              <h3 className="song__name">{names[2]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">19</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[3]}</span>
+              <img src={`data:image/jpeg;base64,${banners[3]}`} alt="banner" />
+              <h3 className="song__name">{names[3]}</h3>
               <div className="protector"></div>
             </div>
             <div className="song">
-              <span className="song__id">20</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
-              <div className="protector"></div>
-            </div>
-            <div className="song">
-              <span className="song__id">21</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
-              <div className="protector"></div>
-            </div>
-            <div className="song">
-              <span className="song__id">22</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
-              <div className="protector"></div>
-            </div>
-            <div className="song">
-              <span className="song__id">23</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
-              <div className="protector"></div>
-            </div>
-            <div className="song">
-              <span className="song__id">24</span>
-              <img src={banner} alt="banner" />
-              <h3 className="song__name">Artista</h3>
+              <span className="song__id">{ids[4]}</span>
+              <img src={`data:image/jpeg;base64,${banners[4]}`} alt="banner" />
+              <h3 className="song__name">{names[4]}</h3>
               <div className="protector"></div>
             </div>
           </div>
