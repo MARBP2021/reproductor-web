@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/player.css";
-import banner from "../assets/images/banner.jpg";
 
-const Player = () => {
+const Player = ({ status, data }) => {
+  const [currentTime, setCurrentTime] = useState("00:00");
+  const [totalTime, setTotalTime] = useState("00:00");
+
   // Cambiando el icono play/pause
   const changeState = () => {
     const $control = document.querySelector(".controls__state");
+    const $audio = document.querySelector("audio");
 
     if ($control.dataset.state === "play") {
       $control.dataset.state = "pause";
+      $audio.pause();
     } else {
       $control.dataset.state = "play";
+      $audio.play();
     }
   };
 
@@ -28,32 +33,20 @@ const Player = () => {
     $current.innerText = secondsToString(e.target.value);
   };
 
-  // Mostrando el reproductor oculto
-  document.onclick = (e) => {
-    if (e.target.className === "protector") {
-      const $main = document.querySelector(".main");
-
-      if ($main.dataset.size === "full") {
-        const $footer = document.querySelector(".footer");
-        const $control = document.querySelector(".controls__state");
-
-        $main.dataset.size = "short";
-        $footer.dataset.hidden = "false";
-        $control.dataset.state = "play";
-      }
-    }
-  };
-
   return (
-    <footer className="footer" data-hidden="true">
+    <footer className="footer" data-hidden={status.hidden}>
       <div className="limiter">
         <div className="album">
-          <img src={banner} alt="banner" className="album__banner" />
-          <span className="album__song">Propuesta indecente</span>
-          <span className="album__artist">Romeo Santos</span>
+          <img
+            src={`data:image/jpeg;base64,${data.banner ? data.banner : null}`}
+            alt="banner"
+            className="album__banner"
+          />
+          <span className="album__song">{data.artist}</span>
+          <span className="album__artist">{data.song}</span>
         </div>
         <div className="range">
-          <span className="range__current">0:00</span>
+          <span className="range__current">{currentTime}</span>
           <input
             type="range"
             min={0}
@@ -62,7 +55,7 @@ const Player = () => {
             step={1}
             onChange={showTime}
           ></input>
-          <span className="range__total">5:00</span>
+          <span className="range__total">{totalTime}</span>
         </div>
         <div className="controls">
           <span
@@ -72,7 +65,7 @@ const Player = () => {
           ></span>
           <div
             className="controls__state"
-            data-state="pause"
+            data-state={status.state}
             onClick={changeState}
           >
             <div className="play">
@@ -97,6 +90,12 @@ const Player = () => {
           ></span>
         </div>
       </div>
+      <audio>
+        <source
+          src={`data:audio/mpeg;base64,${data.audio}`}
+          type="audio/mpeg"
+        />
+      </audio>
     </footer>
   );
 };
