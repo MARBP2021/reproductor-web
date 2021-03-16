@@ -1,20 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/player.css";
 
-const Player = ({ status, data }) => {
-  const [currentTime, setCurrentTime] = useState("00:00");
-  const [totalTime, setTotalTime] = useState("00:00");
+const Player = ({ status, data, times, events }) => {
+  // const [currentTime, setCurrentTime] = useState("00:00");
+  // const [totalTime, setTotalTime] = useState("00:00");
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   const $range = document.querySelector("input[type='range']");
+
+  //   $range.onInput = () => {
+  //     const $audio = document.querySelector("audio");
+  //   };
+  // });
+  const changeValue = () => {
+    const $range = document.querySelector("input[type='range']");
+    const $audio = document.querySelector("audio");
+
+    $audio.currentTime = $range.value;
+
+    events.setDuration({
+      current: $audio.currentTime,
+      total: $audio.duration,
+    });
+  };
 
   // Cambiando el icono play/pause
   const changeState = () => {
-    const $control = document.querySelector(".controls__state");
     const $audio = document.querySelector("audio");
 
-    if ($control.dataset.state === "play") {
-      $control.dataset.state = "pause";
+    if (status.status === "play") {
+      events.setState({ hidden: "false", status: "pause" });
       $audio.pause();
     } else {
-      $control.dataset.state = "play";
+      events.setState({ hidden: "false", status: "play" });
       $audio.play();
     }
   };
@@ -23,15 +40,16 @@ const Player = ({ status, data }) => {
   const secondsToString = (seconds) => {
     let minute = Math.floor((seconds / 60) % 60);
     let second = seconds % 60;
+    second = second.toFixed(0);
     second = second < 10 ? "0" + second : second;
-    return minute + ":" + second;
+    return `0${minute.toFixed(0)}:${second}`;
   };
 
   // Mostrando el tiempo actual de la cancion
-  const showTime = (e) => {
-    const $current = document.querySelector(".range__current");
-    $current.innerText = secondsToString(e.target.value);
-  };
+  // const showTime = (e) => {
+  //   const $current = document.querySelector(".range__current");
+  //   $current.innerText = secondsToString(e.target.value);
+  // };
 
   return (
     <footer className="footer" data-hidden={status.hidden}>
@@ -46,16 +64,18 @@ const Player = ({ status, data }) => {
           <span className="album__artist">{data.song}</span>
         </div>
         <div className="range">
-          <span className="range__current">{currentTime}</span>
+          <span className="range__current">
+            {secondsToString(times.current)}
+          </span>
           <input
             type="range"
             min={0}
-            max={300}
-            defaultValue={0}
-            step={1}
-            onChange={showTime}
+            max={times.total}
+            value={times.current}
+            step={0.1}
+            onChange={changeValue}
           ></input>
-          <span className="range__total">{totalTime}</span>
+          <span className="range__total">{secondsToString(times.total)}</span>
         </div>
         <div className="controls">
           <span
@@ -65,7 +85,7 @@ const Player = ({ status, data }) => {
           ></span>
           <div
             className="controls__state"
-            data-state={status.state}
+            data-state={status.status}
             onClick={changeState}
           >
             <div className="play">
