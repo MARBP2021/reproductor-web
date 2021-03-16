@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Player from "./Player";
 import "../styles/main.css";
 
 const Main = () => {
   const [count, setCount] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [ids, setIds] = useState(["", "", "", "", ""]);
   const [names, setNames] = useState(["", "", "", "", ""]);
   const [banners, setBanners] = useState(["", "", "", "", ""]);
@@ -29,6 +29,8 @@ const Main = () => {
           data[3].banner,
           data[4].banner,
         ]);
+
+        setVisible(false);
       })
       .catch((error) => {
         console.log(error);
@@ -41,6 +43,9 @@ const Main = () => {
 
   return (
     <main className="main" data-size="full">
+      <div className="protector protector--main" data-hidden={visible}>
+        <div className="loader"></div>
+      </div>
       <div className="limiter">
         <section className="section">
           <h2 className="section__title">Lista de canciones</h2>
