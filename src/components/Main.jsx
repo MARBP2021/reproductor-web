@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 import Player from "./Player";
 import "../styles/main.css";
 
 const Main = () => {
+
+  
   const [count, setCount] = useState(false);
   const [size, setSize] = useState("full");
   const [state, setState] = useState({ hidden: "true", status: "play" });
@@ -51,7 +54,7 @@ const Main = () => {
         setSong(data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error); 
       });
   };
 
@@ -63,47 +66,55 @@ const Main = () => {
     }
   };
 
+  let refProtector = useRef();
+  let audioRef = useRef();
+  const colocandoCancion = async (e) => {
+
+    if(refProtector.current) {
+         
+        const $audio = document.querySelector("audio");
+    
+        await fetchSong(e.target.previousElementSibling.textContent);
+        showPlayer(e);
+      
+        setInterval(() => {
+          setDuration({
+            current: isNaN($audio.currentTime) ? 0 : $audio.currentTime,
+            total: isNaN($audio.duration) ? 0 : $audio.duration,
+        });
+      }, 1000);
+    
+      $audio.load();
+      $audio.play();
+    
+      $audio.onended = () => {
+        setState({ hidden: "false", status: "pause" });
+      };
+    }
+ 
+  }
+
   useEffect(() => {
-    // Recuperando las canciones
-    fetchData();
+    fetchData();    
 
-    // Colocando la cancion en el reproductor
-    document.addEventListener("click", (e) => {
-      (async () => {
-        if (e.target.className === "protector") {
-          const $audio = document.querySelector("audio");
-
-          await fetchSong(e.target.previousElementSibling.textContent);
-          showPlayer(e);
-
-          setInterval(() => {
-            setDuration({
-              current: isNaN($audio.currentTime) ? 0 : $audio.currentTime,
-              total: isNaN($audio.duration) ? 0 : $audio.duration,
-            });
-          }, 1000);
-
-          $audio.load();
-          $audio.play();
-
-          $audio.onended = () => {
-            setState({ hidden: "false", status: "pause" });
-          };
-        }
-      })();
-    });
+    console.log(refProtector.current.classList.value)
+    
   }, [count]);
 
   return (
     <>
-      <main className="main" data-size={size}>
-        <div className="protector protector--main" data-hidden={visible}>
+      <main 
+        className="main" data-size= {size}
+      >
+        <div className="protector protector--main" ref = {refProtector} data-hidden={visible}>
           <div className="loader"></div>
         </div>
         <div className="limiter">
           <section className="section">
             <h2 className="section__title">Lista de canciones</h2>
-            <div className="section__content">
+            <div 
+              className="section__content"              
+            >
               <div className="song">
                 <img
                   src={`data:image/jpeg;base64,${banners[0]}`}
@@ -111,7 +122,12 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[0]}</h3>
                 <span className="song__id">{ids[0]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                  ></div>
               </div>
               <div className="song">
                 <img
@@ -120,7 +136,14 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[1]}</h3>
                 <span className="song__id">{ids[1]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}      
+                  
+                  >
+                  
+                  </div>
               </div>
               <div className="song">
                 <img
@@ -129,8 +152,16 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[2]}</h3>
                 <span className="song__id">{ids[2]}</span>
-                <div className="protector"></div>
+                <div 
+                
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                
+                ></div>
+              
               </div>
+
               <div className="song">
                 <img
                   src={`data:image/jpeg;base64,${banners[3]}`}
@@ -138,7 +169,11 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[3]}</h3>
                 <span className="song__id">{ids[3]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                  ></div>
               </div>
               <div className="song">
                 <img
@@ -147,7 +182,11 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[4]}</h3>
                 <span className="song__id">{ids[4]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector} 
+                  onClick = {colocandoCancion}>                    
+                  </div>
               </div>
               <div className="song">
                 <img
@@ -156,7 +195,12 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[0]}</h3>
                 <span className="song__id">{ids[0]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                  
+                  ></div>
               </div>
               <div className="song">
                 <img
@@ -165,7 +209,11 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[1]}</h3>
                 <span className="song__id">{ids[1]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                  ></div>
               </div>
               <div className="song">
                 <img
@@ -174,7 +222,13 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[2]}</h3>
                 <span className="song__id">{ids[2]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector} 
+                  onClick = {colocandoCancion}
+                  >
+
+                  </div>
               </div>
               <div className="song">
                 <img
@@ -183,7 +237,14 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[3]}</h3>
                 <span className="song__id">{ids[3]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector} 
+                  onClick = {colocandoCancion}
+                  >
+
+
+                </div>
               </div>
               <div className="song">
                 <img
@@ -192,7 +253,13 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[4]}</h3>
                 <span className="song__id">{ids[4]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                  onClick = {colocandoCancion}
+                  >
+
+                  </div>
               </div>
               <div className="song">
                 <img
@@ -201,7 +268,12 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[0]}</h3>
                 <span className="song__id">{ids[0]}</span>
-                <div className="protector"></div>
+                <div 
+                  className="protector" 
+                  ref = {refProtector}
+                >
+
+                </div>
               </div>
               <div className="song">
                 <img
@@ -210,7 +282,7 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[1]}</h3>
                 <span className="song__id">{ids[1]}</span>
-                <div className="protector"></div>
+                <div className="protector" ref = {refProtector} onClick = {colocandoCancion}></div>
               </div>
               <div className="song">
                 <img
@@ -219,7 +291,10 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[2]}</h3>
                 <span className="song__id">{ids[2]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector} 
+                    onClick = {colocandoCancion}></div>
               </div>
               <div className="song">
                 <img
@@ -228,7 +303,13 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[3]}</h3>
                 <span className="song__id">{ids[3]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector} 
+                    onClick = {colocandoCancion}
+                    >
+
+                    </div>
               </div>
               <div className="song">
                 <img
@@ -237,7 +318,12 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[4]}</h3>
                 <span className="song__id">{ids[4]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    >
+                    </div>
               </div>
               <div className="song">
                 <img
@@ -246,7 +332,11 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[0]}</h3>
                 <span className="song__id">{ids[0]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    ></div>
               </div>
               <div className="song">
                 <img
@@ -255,7 +345,12 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[1]}</h3>
                 <span className="song__id">{ids[1]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    
+                    ></div>
               </div>
               <div className="song">
                 <img
@@ -264,7 +359,11 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[2]}</h3>
                 <span className="song__id">{ids[2]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    ></div>
               </div>
               <div className="song">
                 <img
@@ -273,7 +372,16 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[3]}</h3>
                 <span className="song__id">{ids[3]}</span>
-                <div className="protector"></div>
+                
+                <div 
+                    
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    
+                    >
+
+                    </div>
               </div>
               <div className="song">
                 <img
@@ -282,18 +390,26 @@ const Main = () => {
                 />
                 <h3 className="song__name">{names[4]}</h3>
                 <span className="song__id">{ids[4]}</span>
-                <div className="protector"></div>
+                <div 
+                    className="protector" 
+                    ref = {refProtector}
+                    onClick = {colocandoCancion}
+                    >
+
+                    </div>
               </div>
             </div>
           </section>
         </div>
       </main>
+
       <Player
         status={state}
         data={song}
         times={duration}
         events={{ setState, setDuration }}
       />
+      
     </>
   );
 };

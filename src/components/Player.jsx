@@ -1,38 +1,28 @@
-import React from "react";
+import React,{useEffect,useState, useRef } from "react";
 import "../styles/player.css";
 
 const Player = ({ status, data, times, events }) => {
-  // const [currentTime, setCurrentTime] = useState("00:00");
-  // const [totalTime, setTotalTime] = useState("00:00");
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   const $range = document.querySelector("input[type='range']");
 
-  //   $range.onInput = () => {
-  //     const $audio = document.querySelector("audio");
-  //   };
-  // });
+  let inputRef = useRef();
+  let audioRef = useRef();
+
   const changeValue = () => {
-    const $range = document.querySelector("input[type='range']");
-    const $audio = document.querySelector("audio");
 
-    $audio.currentTime = $range.value;
-
+    audioRef.current.currentTime = inputRef.current.value;
     events.setDuration({
-      current: $audio.currentTime,
-      total: $audio.duration,
+      current: audioRef.current.currentTime,
+      total: audioRef.current.duration,
     });
   };
 
   // Cambiando el icono play/pause
   const changeState = () => {
-    const $audio = document.querySelector("audio");
-
     if (status.status === "play") {
       events.setState({ hidden: "false", status: "pause" });
-      $audio.pause();
+      audioRef.current.pause();
     } else {
       events.setState({ hidden: "false", status: "play" });
-      $audio.play();
+      audioRef.current.play();
     }
   };
 
@@ -43,13 +33,10 @@ const Player = ({ status, data, times, events }) => {
     second = second.toFixed(0);
     second = second < 10 ? "0" + second : second;
     return `0${minute.toFixed(0)}:${second}`;
+  
   };
 
-  // Mostrando el tiempo actual de la cancion
-  // const showTime = (e) => {
-  //   const $current = document.querySelector(".range__current");
-  //   $current.innerText = secondsToString(e.target.value);
-  // };
+
 
   return (
     <footer className="footer" data-hidden={status.hidden}>
@@ -68,6 +55,7 @@ const Player = ({ status, data, times, events }) => {
             {secondsToString(times.current)}
           </span>
           <input
+            ref = {inputRef}
             type="range"
             min={0}
             max={times.total}
@@ -110,7 +98,7 @@ const Player = ({ status, data, times, events }) => {
           ></span>
         </div>
       </div>
-      <audio>
+      <audio ref = {audioRef}>
         <source
           src={`data:audio/mpeg;base64,${data.audio}`}
           type="audio/mpeg"

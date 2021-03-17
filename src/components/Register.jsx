@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/register.css";
+import "../styles/Register.css";
 
 const Register = ({ goToLogin }) => {
   const [registroExitoso, setRegistroExitoso] = useState("no-registro");
