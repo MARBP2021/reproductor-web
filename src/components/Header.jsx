@@ -2,20 +2,28 @@ import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import "../styles/header.css";
 
-const Header = () => {
+const Header = ({logout}) => {
   // Recuperando el nombre de usuario desde localstorage
   const user = localStorage.getItem("user");
-
+  
   const [userName, setName] = useState(user);
+  const [desplegarMenu, setdesplegarMenu] = useState('user__logout')
+  
+  const mostrarMenu = e => {
+    setdesplegarMenu('user__logout--visible');
+    if(desplegarMenu === "user__logout--visible") setdesplegarMenu('user__logout');
+  }
 
-  // Cambiando el nombre dependiendo del tamaño del dispositivo
+
   const changeName = () =>
-    window.innerWidth < 768 ? setName(user[0].toUpperCase()) : setName(user);
+  window.innerWidth < 768 ? setName(user[0].toUpperCase()) : setName(user);
 
   document.addEventListener("DOMContentLoaded", changeName);
   window.addEventListener("resize", changeName);
 
+
   return (
+    <> 
     <header className="header">
       <div className="limiter">
         <div className="logo">
@@ -32,11 +40,28 @@ const Header = () => {
           </label>
           <input id="search" type="text" placeholder="Buscar en AuraMusic" />
         </div>
-        <div className="user">
-          <span className="user__name">{userName}</span>
+        <div 
+            className="user"
+            onClick = {mostrarMenu}
+            
+        >
+        
+
+
+        <span className="user__name">{userName}</span>
+        <div 
+          className ={desplegarMenu}
+          onClick = {logout}
+          
+          
+        >Log Out</div>
+  
         </div>
+    
       </div>
+      
     </header>
+    </>
   );
 };
 

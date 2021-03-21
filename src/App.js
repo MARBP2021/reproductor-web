@@ -5,9 +5,9 @@ import Form from "./components/Form";
 
 const App = () => {
   
-
   const [logged, setLogged] = useState(false)
 
+  //cuando el usuario entra con su nombre y contrasenia correctos.
   const capturarId = (id, responseUser) => id && responseUser ? setLogged(true): null;
    
 
@@ -20,13 +20,19 @@ const App = () => {
     localStorage.removeItem("user");
 
   }
-
+  //cuando el usuario da click en Log Out dentro del reproductor
+  const Logout = (e) => {
+    setLogged(false);
+    localStorage.removeItem('user');  
+    console.log(logged);
+  }
+  
 
 
   return (
   <>
 
-  {logged || user ? <Reproductor /> : <Form capturarId = {capturarId}/>}
+  {logged || user ? <Reproductor Logout = {Logout}/> : <Form capturarId = {capturarId}/>}
   
   </>
   

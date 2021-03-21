@@ -109,6 +109,26 @@
     font-weight: var(--font-bold);
   }
 }
+.user__logout{
+
+  display:none;
+  
+}
+
+.user__logout--visible{
+
+  display: inline-block;
+  position: absolute; 
+  font-size: 15px;
+  color:white;
+  background-color: var(--logo);
+  height:30px;
+  border-radius: 5px;
+  padding-right:5px;
+  padding-left:30px;
+  margin-top: 80px; 
+  
+}
 
 @media (min-width: 768px) {
   .header .limiter {
@@ -120,4 +140,5 @@
     justify-content: flex-start;
     padding: 0 15px;
   }
+
 }
